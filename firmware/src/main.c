@@ -37,26 +37,66 @@ extern ACTIVE_SCAN_RESULT               ActiveScanResults[ACTIVE_SCAN_RESULT_SIZ
 extern RECEIVED_MESSAGE  rxMessage;
 
 
+char pseudo [9];
+uint8_t canal, duration;
+uint32_t map;
 
+
+char pseudoRead(char * str) {
+	int	i=0;
+	do
+    {
+		while(!uartIsChar());
+		str[i++] = uartRead();		
+	} 
+    while((i <= 9) && (str[i-1] != 13));
+	str[i-1] = 0;
+    return str;
+}
+
+void chatInit(void){
+    SYSTEM_Initialize();
+	uartInitialize();
+    vt100ClearScreen();
+    uartPrint("Entrez votre pseudo :");
+    pseudoRead(pseudo);
+    vt100ClearScreen();
+    uartPrint("Bienvenue ");
+    uartPrint(pseudo);
+}
+
+void RX(void)
+{
+    if (MiApp_MessageAvailable())
+    {
+        uartPrint(rxMessage);
+    }
+    
+}
+
+void TX(void)
+{
+    MiApp_FlushTx();
+    
+}
 
 void main (void)
 {
-    SYSTEM_Initialize();
-	uartInitialize();
-    
-    char tab_char [7];
-    int i = 0;
-    uartPrint("Entrez votre pseudo :");
-    if (uartIsChar()==true){
-        tab_char[i] = uartRead();
-        i++;
-    } 
-    
-    if (i==8){
-        uartPrint("Bienvenue %c !", tab_char);
+	chatInit();
+    MiApp_ProtocolInit(false);
+    MiApp_SetChannel(canal);
+    MiApp_SearchConnection(duration,map);
+    if (ActiveScanResults.PANID == 5678)
+    {
+        MiApp_ConnectionMode(ENABLE_ALL_CONN);
+        MiApp_StartConnection(START_CONN_DIRECT,0,0);
+    }
+    else
+    {
+        MiApp_EstablishConnection(index,CONN_MODE_DIRECT);
+        HelloToAll();
     }
     
-    
-            
     while(1);
 }
+
