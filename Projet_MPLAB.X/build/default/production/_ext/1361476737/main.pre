@@ -1,6 +1,46 @@
 
 # 1 "../firmware/src/main.c"
 
+
+# 11
+#pragma config WDTEN = OFF
+#pragma config PLLDIV = 2
+#pragma config STVREN = ON
+#pragma config XINST = OFF
+
+
+#pragma config CPUDIV = OSC3_PLL3
+#pragma config CP0 = OFF
+
+
+#pragma config OSC = HSPLL
+#pragma config T1DIG = ON
+#pragma config LPT1OSC = OFF
+#pragma config FCMEN = ON
+#pragma config IESO = ON
+
+
+#pragma config WDTPS = 32768
+
+
+#pragma config DSWDTOSC = INTOSCREF
+#pragma config RTCOSC = T1OSCREF
+#pragma config DSBOREN = ON
+#pragma config DSWDTEN = ON
+#pragma config DSWDTPS = G2
+
+
+#pragma config IOL1WAY = ON
+#pragma config MSSP7B_EN = MSK7
+
+
+#pragma config WPFP = PAGE_63
+#pragma config WPEND = PAGE_WPFP
+#pragma config WPCFG = OFF
+
+
+#pragma config WPDIS = OFF
+
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
 
@@ -9650,9 +9690,43 @@ void uartHexaPrint(uint8_t * val,uint8_t n);
 
 # 44
 void vT100EraseEndOfLine(void);
+void vT100ClearScreen(void);
+void vT100SetCursorPos(uint8_t r,uint8_t c);
 
 # 4 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\__size_t.h"
 typedef unsigned size_t;
+
+# 14 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\string.h"
+extern void * memcpy(void *, const void *, size_t);
+extern void * memmove(void *, const void *, size_t);
+extern void * memset(void *, int, size_t);
+
+# 34
+extern char * strcat(char *, const char *);
+extern char * strcpy(char *, const char *);
+extern char * strncat(char *, const char *, size_t);
+extern char * strncpy(char *, const char *, size_t);
+extern char * strdup(const char *);
+extern char * strtok(char *, const char *);
+
+
+extern int memcmp(const void *, const void *, size_t);
+extern int strcmp(const char *, const char *);
+extern int stricmp(const char *, const char *);
+extern int strncmp(const char *, const char *, size_t);
+extern int strnicmp(const char *, const char *, size_t);
+extern void * memchr(const void *, int, size_t);
+extern size_t strcspn(const char *, const char *);
+extern char * strpbrk(const char *, const char *);
+extern size_t strspn(const char *, const char *);
+extern char * strstr(const char *, const char *);
+extern char * stristr(const char *, const char *);
+extern char * strerror(int);
+extern size_t strlen(const char *);
+extern char * strchr(const char *, int);
+extern char * strichr(const char *, int);
+extern char * strrchr(const char *, int);
+extern char * strrichr(const char *, int);
 
 # 7 "C:\Program Files (x86)\Microchip\xc8\v1.38\include\stdarg.h"
 typedef void * va_list[1];
@@ -10217,37 +10291,162 @@ uint8_t Total_Connections(void);
 # 1167
 extern RECEIVED_MESSAGE rxMessage;
 
-# 30 "../firmware/src/main.c"
+# 75 "../firmware/src/main.c"
 extern API_UINT16_UNION myPANID;
 extern uint8_t myLongAddress[8];
 extern API_UINT16_UNION myShortAddress;
 extern ACTIVE_SCAN_RESULT ActiveScanResults[10];
-
-
-
 extern RECEIVED_MESSAGE rxMessage;
 
+int Info = 35;
 
+# 89
+extern RECEIVED_MESSAGE rxMessage;
+char myPseudo[8+1];
+
+# 97
+void getPseudo(char *);
+void RX(void);
+void TX(void);
+void broadcastData(char *,...);
+void initChat(void);
+void initNwk(void);
 
 
 void main (void)
 {
+
 SYSTEM_Initialize();
+
 uartInitialize();
 
-char tab_char [7];
+initChat();
+
+initNwk();
+
+while(1){
+RX();
+TX();
+}
+
+}
+
+# 127
+void initChat(void){
+
+# 133
+vT100ClearScreen();
+vT100SetCursorPos(0,0);
+_uartPrint((char*)"Saisissez votre pseudo : ");
+getPseudo(myPseudo);
+_uartPrint((char*)"\r\n Bonjour : ");
+_uartPrint((char*)myPseudo);
+_uartPrint((char*)"!\r\n");
+
+}
+
+void initNwk(){
+uint8_t respondingDevices;
+bool found;
+uint8_t index;
+
+MiApp_ProtocolInit(0);
+
+
+if(MiApp_SetChannel(11) == 0){
+
+
+
+_uartPrint((char*)"Erreur : selection de canal");
+
+goto fin;
+}
+
+respondingDevices = MiApp_SearchConnection(10,1L<<11);
+found = 0;
+if(respondingDevices !=0){
+for(index = 0; index< respondingDevices;index++){
+if(found = (ActiveScanResults[index].PANID.Val == 0x5678))
+break;
+}
+}
+
+if(found){
+MiApp_ConnectionMode(0x02);
+if(MiApp_EstablishConnection(index, 0x00)==0xFF){
+
+
+
+_uartPrint((char*)"Erreur : connexion refusee");
+
+goto fin;
+}
+
+
+
+_uartPrint((char*)"Connexion reussie sur PAN existant\n\r");
+
+
+}else{
+MiApp_ConnectionMode(0x00);
+if(!MiApp_StartConnection(0x00,0,0)){
+
+
+
+_uartPrint((char*)"Erreur : creation refusee");
+
+goto fin;
+}
+
+
+
+_uartPrint((char*)"Creation d'un nouveau PAN\n\r");
+
+}
+
+# 206
+_uartPrint((char*)"Votre adresse est : 0x");
+uartHexaPrint((uint8_t *)&myShortAddress,2);
+_uartPrint((char*)"\r\n");
+
+
+return;
+fin: while(1);
+}
+
+# 219
+void getPseudo(char * pseudo){
 int i = 0;
-_uartPrint((char*)"Entrez votre pseudo :");
-if (PIR3bits.RC2IF==1){
-tab_char[i] = uartRead();
+do{
+if(PIR3bits.RC2IF){
+pseudo[i++] = uartRead();
+}
+}while((pseudo[i-1]!=0x0D)||(i>=8));
+pseudo[i-1] = 0;
+}
+
+
+void RX(void){
+if(MiApp_MessageAvailable()){
+_uartPrint((char*)"\r\n Message :");
+_uartPrint((char*)rxMessage.Payload);
+MiApp_DiscardMessage();
+}
+}
+
+
+
+void TX(void){
+
+{TxData = 11;};
+char * toto = "toto";
+int i = 0;
+if (PORTBbits.RB2 == 0){
+while (toto[i-1]!=0){
+TxBuffer[TxData++] = toto[i];
 i++;
 }
-
-if (i==8){
-_uartPrint((char*)"Bienvenue %c !");
+}
+MiApp_BroadcastPacket(1);
 }
 
-
-
-while(1);
-}

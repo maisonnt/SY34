@@ -42,6 +42,8 @@ void uartHexaPrint(uint8_t * val,uint8_t n);
  *           Commandes VT100             
  *********************************************/
 void vT100EraseEndOfLine(void);
+void vT100ClearScreen(void);
+void vT100SetCursorPos(uint8_t r,uint8_t c);
 
 
 
