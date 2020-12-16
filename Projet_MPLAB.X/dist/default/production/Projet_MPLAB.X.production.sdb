@@ -72,17 +72,17 @@
 [v _MiApp_UnicastAddress MiApp_UnicastAddress `(uc  1 e 1 0 ]
 "4813
 [v _MiApp_StartConnection MiApp_StartConnection `(uc  1 e 1 0 ]
-"105 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+"106 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
 [v _main main `(v  1 e 1 0 ]
 "127
 [v _initChat initChat `(v  1 e 1 0 ]
-"143
+"146
 [v _initNwk initNwk `(v  1 e 1 0 ]
-"219
+"224
 [v _getPseudo getPseudo `(v  1 e 1 0 ]
-"230
+"238
 [v _RX RX `(v  1 e 1 0 ]
-"240
+"251
 [v _TX TX `(v  1 e 1 0 ]
 "108 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/system_config/8bitwdk_pic18f46j50_24j40/delay.c
 [v _DELAY_ms DELAY_ms `(v  1 e 1 0 ]
@@ -173,18 +173,18 @@
 "15 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 [v i2___lmul __lmul `(ul  1 e 4 0 ]
-[s S2375 . 1 `uc 1 RepeaterMode 1 0 :1:0 
+[s S2379 . 1 `uc 1 RepeaterMode 1 0 :1:0 
 `uc 1 CCAEnable 1 0 :1:1 
 `uc 1 NetworkFreezer 1 0 :1:2 
 `uc 1 PAddrLength 1 0 :4:3 
 ]
 "32 C:\Users\tpeea\Documents\MPLABXProjects/MLA/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
-[u S2380 . 1 `uc 1 Val 1 0 `S2375 1 bits 1 0 ]
-[s S2383 . 3 `S2380 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
-[v _MACInitParams MACInitParams `S2383  1 e 3 0 ]
-[s S2957 . 80 `uc 1 PayloadLen 1 0 `[79]uc 1 Payload 79 1 ]
+[u S2384 . 1 `uc 1 Val 1 0 `S2379 1 bits 1 0 ]
+[s S2387 . 3 `S2384 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
+[v _MACInitParams MACInitParams `S2387  1 e 3 0 ]
+[s S2961 . 80 `uc 1 PayloadLen 1 0 `[79]uc 1 Payload 79 1 ]
 "53
-[v _RxBuffer RxBuffer `[2]S2957  1 e 160 0 ]
+[v _RxBuffer RxBuffer `[2]S2961  1 e 160 0 ]
 "57
 [v _BankIndex BankIndex `uc  1 e 1 0 ]
 "59
@@ -198,7 +198,7 @@
 [v _MAC_PANID MAC_PANID `S1597  1 e 2 0 ]
 "64
 [v _myNetworkAddress myNetworkAddress `S1597  1 e 2 0 ]
-[s S2963 . 1 `uc 1 TX_BUSY 1 0 :1:0 
+[s S2967 . 1 `uc 1 TX_BUSY 1 0 :1:0 
 `uc 1 TX_PENDING_ACK 1 0 :1:1 
 `uc 1 TX_FAIL 1 0 :1:2 
 `uc 1 RX_SECURITY 1 0 :1:3 
@@ -207,8 +207,8 @@
 `uc 1 SEC_IF 1 0 :1:6 
 ]
 "66
-[u S2971 . 1 `uc 1 Val 1 0 `S2963 1 bits 1 0 ]
-[v _MRF24J40Status MRF24J40Status `VES2971  1 e 1 0 ]
+[u S2975 . 1 `uc 1 Val 1 0 `S2967 1 bits 1 0 ]
+[v _MRF24J40Status MRF24J40Status `VES2975  1 e 1 0 ]
 "53 C:\Users\tpeea\Documents\MPLABXProjects/MLA/framework/miwi/src/miwi_mesh.c
 [v _ScanTime ScanTime `C[15]ul  1 e 60 0 ]
 "60
@@ -217,15 +217,15 @@
 [v _currentChannel currentChannel `uc  1 e 1 0 ]
 "76
 [v _ConnMode ConnMode `uc  1 e 1 0 ]
-[s S2159 . 1 `uc 1 Sleep 1 0 :1:0 
+[s S2163 . 1 `uc 1 Sleep 1 0 :1:0 
 `uc 1 Role 1 0 :2:1 
 `uc 1 Security 1 0 :1:3 
 `uc 1 ConnMode 1 0 :2:4 
 `uc 1 CoordCap 1 0 :1:6 
 ]
 "89
-[u S2165 . 1 `uc 1 Val 1 0 `S2159 1 bits 1 0 ]
-[v _MiWiCapacityInfo MiWiCapacityInfo `S2165  1 e 1 0 ]
+[u S2169 . 1 `uc 1 Val 1 0 `S2163 1 bits 1 0 ]
+[v _MiWiCapacityInfo MiWiCapacityInfo `S2169  1 e 1 0 ]
 [s S1674 . 1 `uc 1 broadcast 1 0 :2:0 
 `uc 1 ackReq 1 0 :1:2 
 `uc 1 secEn 1 0 :1:3 
@@ -258,7 +258,7 @@
 [v _tempShortAddress tempShortAddress `S1597  1 e 2 0 ]
 "107
 [v _tempPANID tempPANID `S1597  1 e 2 0 ]
-[s S2208 _CONNECTION_STAUTS_bits 1 `uc 1 RXOnWhenIdle 1 0 :1:0 
+[s S2212 _CONNECTION_STAUTS_bits 1 `uc 1 RXOnWhenIdle 1 0 :1:0 
 `uc 1 directConnection 1 0 :1:1 
 `uc 1 longAddressValid 1 0 :1:2 
 `uc 1 shortAddressValid 1 0 :1:3 
@@ -268,8 +268,8 @@
 `uc 1 isValid 1 0 :1:7 
 ]
 "108
-[u S2217 __CONNECTION_STATUS 1 `uc 1 Val 1 0 `S2208 1 bits 1 0 ]
-[v _tempNodeStatus tempNodeStatus `S2217  1 e 1 0 ]
+[u S2221 __CONNECTION_STATUS 1 `uc 1 Val 1 0 `S2212 1 bits 1 0 ]
+[v _tempNodeStatus tempNodeStatus `S2221  1 e 1 0 ]
 "110
 [v _TxData TxData `uc  1 e 1 0 ]
 "115
@@ -282,7 +282,7 @@
 [v _myParent myParent `uc  1 e 1 0 ]
 "124
 [v _defaultHops defaultHops `uc  1 e 1 0 ]
-[s S2220 . 2 `uc 1 searchingForNetwork 1 0 :1:0 
+[s S2224 . 2 `uc 1 searchingForNetwork 1 0 :1:0 
 `uc 1 memberOfNetwork 1 0 :1:1 
 `uc 1 RxHasUserData 1 0 :1:2 
 `uc 1 MiWiAckInProgress 1 0 :1:3 
@@ -293,8 +293,8 @@
 `uc 1 Sleeping 1 1 :1:0 
 ]
 "126
-[u S2230 _MIWI_STATE_MACHINE 2 `ui 1 Val 2 0 `S2220 1 bits 2 0 ]
-[v _MiWiStateMachine MiWiStateMachine `S2230  1 e 2 0 ]
+[u S2234 _MIWI_STATE_MACHINE 2 `ui 1 Val 2 0 `S2224 1 bits 2 0 ]
+[v _MiWiStateMachine MiWiStateMachine `S2234  1 e 2 0 ]
 "127
 [v _AcknowledgementSeq AcknowledgementSeq `uc  1 e 1 0 ]
 "128
@@ -311,18 +311,18 @@
 [v _knownCoordinators knownCoordinators `uc  1 e 1 0 ]
 "149
 [v _role role `uc  1 e 1 0 ]
-[s S2233 _OPEN_SOCKET_STATUS_bits 1 `uc 1 matchFound 1 0 :1:0 
+[s S2237 _OPEN_SOCKET_STATUS_bits 1 `uc 1 matchFound 1 0 :1:0 
 `uc 1 requestIsOpen 1 0 :1:1 
 `uc 1 itIsMe 1 0 :1:2 
 ]
 "152
-[u S2237 _OPEN_SOCKET_STATUS 1 `S2233 1 bits 1 0 `uc 1 Val 1 0 ]
+[u S2241 _OPEN_SOCKET_STATUS 1 `S2237 1 bits 1 0 `uc 1 Val 1 0 ]
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[s S2253 _OPEN_SOCKET 26 `S2237 1 status 1 0 `uc 1 socketHandle 1 1 `S1597 1 ShortAddress1 2 2 `[8]uc 1 LongAddress1 8 4 `S1597 1 ShortAddress2 2 12 `[8]uc 1 LongAddress2 8 14 `S29 1 socketStart 4 22 ]
-[v _openSocketInfo openSocketInfo `S2253  1 e 26 0 ]
-[s S2261 . 1 `uc 1 packetType 1 0 :2:0 
+[s S2257 _OPEN_SOCKET 26 `S2241 1 status 1 0 `uc 1 socketHandle 1 1 `S1597 1 ShortAddress1 2 2 `[8]uc 1 LongAddress1 8 4 `S1597 1 ShortAddress2 2 12 `[8]uc 1 LongAddress2 8 14 `S29 1 socketStart 4 22 ]
+[v _openSocketInfo openSocketInfo `S2257  1 e 26 0 ]
+[s S2265 . 1 `uc 1 packetType 1 0 :2:0 
 `uc 1 broadcast 1 0 :1:2 
 `uc 1 secEn 1 0 :1:3 
 `uc 1 repeat 1 0 :1:4 
@@ -331,19 +331,23 @@
 `uc 1 sourcePrsnt 1 0 :1:7 
 ]
 "154
-[u S2269 . 1 `uc 1 Val 1 0 `S2261 1 bits 1 0 ]
-[s S2272 . 7 `S2269 1 flags 1 0 `*.39uc 1 DestAddress 2 1 `uc 1 altDestAddr 1 3 `uc 1 altSrcAddr 1 4 `S1597 1 DestPANID 2 5 ]
-[v _MTP MTP `S2272  1 e 7 0 ]
+[u S2273 . 1 `uc 1 Val 1 0 `S2265 1 bits 1 0 ]
+[s S2276 . 7 `S2273 1 flags 1 0 `*.39uc 1 DestAddress 2 1 `uc 1 altDestAddr 1 3 `uc 1 altSrcAddr 1 4 `S1597 1 DestPANID 2 5 ]
+[v _MTP MTP `S2276  1 e 7 0 ]
 "155
-[s S2289 . 11 `S2269 1 flags 1 0 `*.39uc 1 SourceAddress 2 1 `*.39uc 1 Payload 2 3 `uc 1 PayloadLen 1 5 `uc 1 RSSIValue 1 6 `uc 1 LQIValue 1 7 `uc 1 altSourceAddress 1 8 `S1597 1 SourcePANID 2 9 ]
-[v _MACRxPacket MACRxPacket `S2289  1 e 11 0 ]
+[s S2293 . 11 `S2273 1 flags 1 0 `*.39uc 1 SourceAddress 2 1 `*.39uc 1 Payload 2 3 `uc 1 PayloadLen 1 5 `uc 1 RSSIValue 1 6 `uc 1 LQIValue 1 7 `uc 1 altSourceAddress 1 8 `S1597 1 SourcePANID 2 9 ]
+[v _MACRxPacket MACRxPacket `S2293  1 e 11 0 ]
 "158
-[s S2298 __CONNECTION_ENTRY 13 `S1597 1 PANID 2 0 `S1597 1 AltAddress 2 2 `[8]uc 1 Address 8 4 `S2217 1 status 1 12 ]
-[v _ConnectionTable ConnectionTable `[7]S2298  1 e 91 0 ]
+[s S2302 __CONNECTION_ENTRY 13 `S1597 1 PANID 2 0 `S1597 1 AltAddress 2 2 `[8]uc 1 Address 8 4 `S2221 1 status 1 12 ]
+[v _ConnectionTable ConnectionTable `[7]S2302  1 e 91 0 ]
 "167
-[s S2303 _BROADCAST_RECORD 8 `S1597 1 AltSourceAddr 2 0 `uc 1 MiWiSeq 1 2 `uc 1 RxCounter 1 3 `S29 1 StartTick 4 4 ]
-[v _BroadcastRecords BroadcastRecords `[4]S2303  1 e 32 0 ]
-"90 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+[s S2307 _BROADCAST_RECORD 8 `S1597 1 AltSourceAddr 2 0 `uc 1 MiWiSeq 1 2 `uc 1 RxCounter 1 3 `S29 1 StartTick 4 4 ]
+[v _BroadcastRecords BroadcastRecords `[4]S2307  1 e 32 0 ]
+"81 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+[v _detect detect `i  1 e 2 0 ]
+"82
+[v _num num `i  1 e 2 0 ]
+"91
 [v _myPseudo myPseudo `[9]uc  1 e 9 0 ]
 "32 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/system_config/8bitwdk_pic18f46j50_24j40/button.h
 [v _switch0PressTime switch0PressTime `S29  1 e 4 0 ]
@@ -485,7 +489,7 @@
 [v _SSP2BUF SSP2BUF `VEuc  1 e 1 @3957 ]
 "5515
 [v _SPBRGH2 SPBRGH2 `VEuc  1 e 1 @3965 ]
-[s S1857 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S1861 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -495,55 +499,55 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "5623
-[s S1866 . 1 `uc 1 ABDEN1 1 0 :1:0 
+[s S1870 . 1 `uc 1 ABDEN1 1 0 :1:0 
 ]
-[s S1868 . 1 `uc 1 . 1 0 :7:0 
+[s S1872 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 ABDOVF1 1 0 :1:7 
 ]
-[s S1871 . 1 `uc 1 . 1 0 :3:0 
+[s S1875 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 BRG161 1 0 :1:3 
 ]
-[s S1874 . 1 `uc 1 . 1 0 :4:0 
+[s S1878 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CKTXP 1 0 :1:4 
 ]
-[s S1877 . 1 `uc 1 . 1 0 :5:0 
+[s S1881 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 DTRXP 1 0 :1:5 
 ]
-[s S1880 . 1 `uc 1 . 1 0 :5:0 
+[s S1884 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 DTRXP1 1 0 :1:5 
 ]
-[s S1883 . 1 `uc 1 . 1 0 :6:0 
+[s S1887 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RCIDL1 1 0 :1:6 
 ]
-[s S1886 . 1 `uc 1 . 1 0 :6:0 
+[s S1890 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RCMT 1 0 :1:6 
 ]
-[s S1889 . 1 `uc 1 . 1 0 :6:0 
+[s S1893 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RCMT1 1 0 :1:6 
 ]
-[s S1892 . 1 `uc 1 . 1 0 :5:0 
+[s S1896 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXDTP1 1 0 :1:5 
 ]
-[s S1895 . 1 `uc 1 . 1 0 :4:0 
+[s S1899 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP 1 0 :1:4 
 ]
-[s S1898 . 1 `uc 1 . 1 0 :4:0 
+[s S1902 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 SCKP1 1 0 :1:4 
 ]
-[s S1901 . 1 `uc 1 . 1 0 :4:0 
+[s S1905 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXCKP1 1 0 :1:4 
 ]
-[s S1904 . 1 `uc 1 . 1 0 :1:0 
+[s S1908 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 WUE1 1 0 :1:1 
 ]
-[s S1907 . 1 `uc 1 . 1 0 :5:0 
+[s S1911 . 1 `uc 1 . 1 0 :5:0 
 `uc 1 RXCKP 1 0 :1:5 
 ]
-[s S1910 . 1 `uc 1 . 1 0 :1:0 
+[s S1914 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 W4E 1 0 :1:1 
 ]
-[u S1913 . 1 `S1857 1 . 1 0 `S1866 1 . 1 0 `S1868 1 . 1 0 `S1871 1 . 1 0 `S1874 1 . 1 0 `S1877 1 . 1 0 `S1880 1 . 1 0 `S1883 1 . 1 0 `S1886 1 . 1 0 `S1889 1 . 1 0 `S1892 1 . 1 0 `S1895 1 . 1 0 `S1898 1 . 1 0 `S1901 1 . 1 0 `S1904 1 . 1 0 `S1907 1 . 1 0 `S1910 1 . 1 0 ]
-[v _BAUDCON1bits BAUDCON1bits `VES1913  1 e 1 @3966 ]
+[u S1917 . 1 `S1861 1 . 1 0 `S1870 1 . 1 0 `S1872 1 . 1 0 `S1875 1 . 1 0 `S1878 1 . 1 0 `S1881 1 . 1 0 `S1884 1 . 1 0 `S1887 1 . 1 0 `S1890 1 . 1 0 `S1893 1 . 1 0 `S1896 1 . 1 0 `S1899 1 . 1 0 `S1902 1 . 1 0 `S1905 1 . 1 0 `S1908 1 . 1 0 `S1911 1 . 1 0 `S1914 1 . 1 0 ]
+[v _BAUDCON1bits BAUDCON1bits `VES1917  1 e 1 @3966 ]
 [s S34 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
@@ -786,7 +790,7 @@
 [v _OSCTUNEbits OSCTUNEbits `VES998  1 e 1 @3995 ]
 "8862
 [v _RCSTA2 RCSTA2 `VEuc  1 e 1 @3996 ]
-[s S1992 . 1 `uc 1 RX9D 1 0 :1:0 
+[s S1996 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -796,7 +800,7 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "8900
-[s S2001 . 1 `uc 1 RX9D2 1 0 :1:0 
+[s S2005 . 1 `uc 1 RX9D2 1 0 :1:0 
 `uc 1 OERR2 1 0 :1:1 
 `uc 1 FERR2 1 0 :1:2 
 `uc 1 ADDEN2 1 0 :1:3 
@@ -805,16 +809,16 @@
 `uc 1 RX92 1 0 :1:6 
 `uc 1 SPEN2 1 0 :1:7 
 ]
-[s S2010 . 1 `uc 1 . 1 0 :6:0 
+[s S2014 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_92 1 0 :1:6 
 ]
-[s S2013 . 1 `uc 1 . 1 0 :6:0 
+[s S2017 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC92 1 0 :1:6 
 ]
-[s S2016 . 1 `uc 1 RCD82 1 0 :1:0 
+[s S2020 . 1 `uc 1 RCD82 1 0 :1:0 
 ]
-[u S2018 . 1 `S1992 1 . 1 0 `S2001 1 . 1 0 `S2010 1 . 1 0 `S2013 1 . 1 0 `S2016 1 . 1 0 ]
-[v _RCSTA2bits RCSTA2bits `VES2018  1 e 1 @3996 ]
+[u S2022 . 1 `S1996 1 . 1 0 `S2005 1 . 1 0 `S2014 1 . 1 0 `S2017 1 . 1 0 `S2020 1 . 1 0 ]
+[v _RCSTA2bits RCSTA2bits `VES2022  1 e 1 @3996 ]
 [s S807 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
@@ -909,7 +913,7 @@
 [v _EECON2 EECON2 `VEuc  1 e 1 @4007 ]
 "9853
 [v _TXSTA2 TXSTA2 `VEuc  1 e 1 @4008 ]
-[s S2061 . 1 `uc 1 TX9D 1 0 :1:0 
+[s S2065 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -919,7 +923,7 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "9887
-[s S2070 . 1 `uc 1 TX9D2 1 0 :1:0 
+[s S2074 . 1 `uc 1 TX9D2 1 0 :1:0 
 `uc 1 TRMT2 1 0 :1:1 
 `uc 1 BRGH2 1 0 :1:2 
 `uc 1 SENDB2 1 0 :1:3 
@@ -928,13 +932,13 @@
 `uc 1 TX92 1 0 :1:6 
 `uc 1 CSRC2 1 0 :1:7 
 ]
-[s S2079 . 1 `uc 1 . 1 0 :6:0 
+[s S2083 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_92 1 0 :1:6 
 ]
-[s S2082 . 1 `uc 1 TXD82 1 0 :1:0 
+[s S2086 . 1 `uc 1 TXD82 1 0 :1:0 
 ]
-[u S2084 . 1 `S2061 1 . 1 0 `S2070 1 . 1 0 `S2079 1 . 1 0 `S2082 1 . 1 0 ]
-[v _TXSTA2bits TXSTA2bits `VES2084  1 e 1 @4008 ]
+[u S2088 . 1 `S2065 1 . 1 0 `S2074 1 . 1 0 `S2083 1 . 1 0 `S2086 1 . 1 0 ]
+[v _TXSTA2bits TXSTA2bits `VES2088  1 e 1 @4008 ]
 "9981
 [v _TXREG2 TXREG2 `VEuc  1 e 1 @4009 ]
 "10000
@@ -1089,7 +1093,7 @@
 [v _hexpowers hexpowers `C[4]ui  1 s 8 hexpowers ]
 "369
 [v _octpowers octpowers `C[6]ui  1 s 12 octpowers ]
-"105 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+"106 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
 [v _main main `(v  1 e 1 0 ]
 {
 "121
@@ -1099,16 +1103,16 @@
 {
 "44
 } 0
-"143 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+"146 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
 [v _initNwk initNwk `(v  1 e 1 0 ]
 {
-"146
+"149
 [v initNwk@index index `uc  1 a 1 10 ]
-"144
+"147
 [v initNwk@respondingDevices respondingDevices `uc  1 a 1 9 ]
-"145
+"148
 [v initNwk@found found `uc  1 a 1 8 ]
-"213
+"217
 } 0
 "89 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/VT100.c
 [v _uartHexaPrint uartHexaPrint `(v  1 e 1 0 ]
@@ -1136,15 +1140,15 @@
 [v _MiApp_ProtocolInit MiApp_ProtocolInit `(uc  1 e 1 0 ]
 {
 [v MiApp_ProtocolInit@bNetworkFreezer bNetworkFreezer `uc  1 a 1 wreg ]
-[s S2375 . 1 `uc 1 RepeaterMode 1 0 :1:0 
+[s S2379 . 1 `uc 1 RepeaterMode 1 0 :1:0 
 `uc 1 CCAEnable 1 0 :1:1 
 `uc 1 NetworkFreezer 1 0 :1:2 
 `uc 1 PAddrLength 1 0 :4:3 
 ]
 "3529
-[u S2380 . 1 `uc 1 Val 1 0 `S2375 1 bits 1 0 ]
-[s S2383 . 3 `S2380 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
-[v MiApp_ProtocolInit@MIP MIP `S2383  1 a 3 36 ]
+[u S2384 . 1 `uc 1 Val 1 0 `S2379 1 bits 1 0 ]
+[s S2387 . 3 `S2384 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
+[v MiApp_ProtocolInit@MIP MIP `S2387  1 a 3 36 ]
 "3530
 [v MiApp_ProtocolInit@i i `uc  1 a 1 39 ]
 "3527
@@ -1158,15 +1162,15 @@
 {
 "1467
 [v MiMAC_Init@i i `uc  1 a 1 33 ]
-[s S2375 . 1 `uc 1 RepeaterMode 1 0 :1:0 
+[s S2379 . 1 `uc 1 RepeaterMode 1 0 :1:0 
 `uc 1 CCAEnable 1 0 :1:1 
 `uc 1 NetworkFreezer 1 0 :1:2 
 `uc 1 PAddrLength 1 0 :4:3 
 ]
 "1465
-[u S2380 . 1 `uc 1 Val 1 0 `S2375 1 bits 1 0 ]
-[s S2383 . 3 `S2380 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
-[v MiMAC_Init@initValue initValue `S2383  1 p 3 30 ]
+[u S2384 . 1 `uc 1 Val 1 0 `S2379 1 bits 1 0 ]
+[s S2387 . 3 `S2384 1 actionFlags 1 0 `*.39uc 1 PAddress 2 1 ]
+[v MiMAC_Init@initValue initValue `S2387  1 p 3 30 ]
 "1502
 } 0
 "59 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/system_config/8bitwdk_pic18f46j50_24j40/symbol.c
@@ -1213,8 +1217,8 @@
 "4728
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
 [u S29 _MIWI_TICK 4 `ul 1 Val 4 0 `S21 1 byte 4 0 `[4]uc 1 v 4 0 `S26 1 word 4 0 ]
-[v MiApp_UnicastAddress@t2_2927 t2 `S29  1 a 4 145 ]
-[v MiApp_UnicastAddress@t1_2916 t1 `S29  1 a 4 141 ]
+[v MiApp_UnicastAddress@t2_2931 t2 `S29  1 a 4 145 ]
+[v MiApp_UnicastAddress@t1_2920 t1 `S29  1 a 4 141 ]
 "4528
 [v MiApp_UnicastAddress@handle handle `uc  1 a 1 151 ]
 "4529
@@ -1315,14 +1319,25 @@
 {
 "115
 } 0
-"219 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+"251 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+[v _TX TX `(v  1 e 1 0 ]
+{
+"263
+[v TX@pointeur pointeur `*.39uc  1 a 2 67 ]
+"257
+[v TX@i i `i  1 a 2 65 ]
+"254
+[v TX@myMessage myMessage `uc  1 a 1 64 ]
+"276
+} 0
+"224
 [v _getPseudo getPseudo `(v  1 e 1 0 ]
 {
-"220
+"225
 [v getPseudo@i i `i  1 a 2 9 ]
-"219
+"224
 [v getPseudo@pseudo pseudo `*.39uc  1 p 2 2 ]
-"227
+"232
 } 0
 "51 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/VT100.c
 [v _uartRead uartRead `(uc  1 e 1 0 ]
@@ -1335,15 +1350,6 @@
 [v _vT100EraseEndOfLine vT100EraseEndOfLine `(v  1 e 1 0 ]
 {
 "144
-} 0
-"240 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
-[v _TX TX `(v  1 e 1 0 ]
-{
-"244
-[v TX@i i `i  1 a 2 70 ]
-"243
-[v TX@toto toto `*.25uc  1 a 2 68 ]
-"252
 } 0
 "4243 C:\Users\tpeea\Documents\MPLABXProjects/MLA/framework/miwi/src/miwi_mesh.c
 [v _MiApp_BroadcastPacket MiApp_BroadcastPacket `(uc  1 e 1 0 ]
@@ -1392,10 +1398,10 @@
 [v ___lmul@multiplicand multiplicand `ul  1 p 4 4 ]
 "129
 } 0
-"230 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
+"238 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
 [v _RX RX `(v  1 e 1 0 ]
 {
-"236
+"245
 } 0
 "77 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/VT100.c
 [v __uartPrint _uartPrint `(v  1 e 1 0 ]
@@ -1423,27 +1429,27 @@
 [v _MiWiTasks MiWiTasks `(v  1 e 1 0 ]
 {
 "1547
-[v MiWiTasks@j_2736 j `ui  1 a 2 102 ]
+[v MiWiTasks@j_2740 j `ui  1 a 2 102 ]
 "819
-[v MiWiTasks@j_2673 j `uc  1 a 1 108 ]
+[v MiWiTasks@j_2677 j `uc  1 a 1 108 ]
 "680
 [v MiWiTasks@j j `uc  1 a 1 119 ]
 [u S1597 . 2 `[2]uc 1 v 2 0 `ui 1 Val 2 0 ]
 "1310
 [v MiWiTasks@CoordAddress CoordAddress `S1597  1 a 2 92 ]
 "1309
-[v MiWiTasks@j_2725 j `uc  1 a 1 111 ]
+[v MiWiTasks@j_2729 j `uc  1 a 1 111 ]
 "1311
 [v MiWiTasks@entry entry `uc  1 a 1 95 ]
-[s S2159 . 1 `uc 1 Sleep 1 0 :1:0 
+[s S2163 . 1 `uc 1 Sleep 1 0 :1:0 
 `uc 1 Role 1 0 :2:1 
 `uc 1 Security 1 0 :1:3 
 `uc 1 ConnMode 1 0 :2:4 
 `uc 1 CoordCap 1 0 :1:6 
 ]
 "1194
-[u S2165 . 1 `uc 1 Val 1 0 `S2159 1 bits 1 0 ]
-[v MiWiTasks@CapacityByte CapacityByte `S2165  1 a 1 107 ]
+[u S2169 . 1 `uc 1 Val 1 0 `S2163 1 bits 1 0 ]
+[v MiWiTasks@CapacityByte CapacityByte `S2169  1 a 1 107 ]
 "1503
 [v MiWiTasks@cIndex cIndex `uc  1 a 1 104 ]
 "1250
@@ -1466,7 +1472,7 @@
 "315
 [v MiWiTasks@destPANID destPANID `S1597  1 a 2 109 ]
 "1826
-[v MiWiTasks@j_2737 j `uc  1 a 1 105 ]
+[v MiWiTasks@j_2741 j `uc  1 a 1 105 ]
 [s S21 _MIWI_TICK_bytes 4 `uc 1 b0 1 0 `uc 1 b1 1 1 `uc 1 b2 1 2 `uc 1 b3 1 3 ]
 "277
 [s S26 _MIWI_TICK_words 4 `ui 1 w0 2 0 `ui 1 w1 2 2 ]
@@ -1530,7 +1536,7 @@
 [v MiMAC_SendPacket@frameControl frameControl `uc  1 a 1 57 ]
 "744
 [v MiMAC_SendPacket@IntraPAN IntraPAN `uc  1 a 1 56 ]
-[s S2261 . 1 `uc 1 packetType 1 0 :2:0 
+[s S2265 . 1 `uc 1 packetType 1 0 :2:0 
 `uc 1 broadcast 1 0 :1:2 
 `uc 1 secEn 1 0 :1:3 
 `uc 1 repeat 1 0 :1:4 
@@ -1539,10 +1545,10 @@
 `uc 1 sourcePrsnt 1 0 :1:7 
 ]
 "736
-[u S2269 . 1 `uc 1 Val 1 0 `S2261 1 bits 1 0 ]
+[u S2273 . 1 `uc 1 Val 1 0 `S2265 1 bits 1 0 ]
 [u S1597 . 2 `[2]uc 1 v 2 0 `ui 1 Val 2 0 ]
-[s S2272 . 7 `S2269 1 flags 1 0 `*.39uc 1 DestAddress 2 1 `uc 1 altDestAddr 1 3 `uc 1 altSrcAddr 1 4 `S1597 1 DestPANID 2 5 ]
-[v MiMAC_SendPacket@transParam transParam `S2272  1 p 7 30 ]
+[s S2276 . 7 `S2273 1 flags 1 0 `*.39uc 1 DestAddress 2 1 `uc 1 altDestAddr 1 3 `uc 1 altSrcAddr 1 4 `S1597 1 DestPANID 2 5 ]
+[v MiMAC_SendPacket@transParam transParam `S2276  1 p 7 30 ]
 "737
 [v MiMAC_SendPacket@MACPayload MACPayload `*.39uc  1 p 2 37 ]
 "738
@@ -1560,8 +1566,8 @@
 [v _InitMRF24J40 InitMRF24J40 `(v  1 e 1 0 ]
 {
 "211
-[v InitMRF24J40@_ms_3326 _ms `ul  1 a 4 23 ]
-[v InitMRF24J40@_dcnt_3325 _dcnt `ul  1 a 4 15 ]
+[v InitMRF24J40@_ms_3330 _ms `ul  1 a 4 23 ]
+[v InitMRF24J40@_dcnt_3329 _dcnt `ul  1 a 4 15 ]
 "208
 [v InitMRF24J40@_ms _ms `ul  1 a 4 19 ]
 [v InitMRF24J40@_dcnt _dcnt `ul  1 a 4 11 ]
@@ -1750,7 +1756,7 @@
 "1852
 [v _high_isr high_isr `II(v  1 e 1 0 ]
 {
-[s S3214 . 1 `uc 1 b0 1 0 :1:0 
+[s S3218 . 1 `uc 1 b0 1 0 :1:0 
 `uc 1 b1 1 0 :1:1 
 `uc 1 b2 1 0 :1:2 
 `uc 1 b3 1 0 :1:3 
@@ -1760,19 +1766,19 @@
 `uc 1 b7 1 0 :1:7 
 ]
 "1900
-[u S3223 _DRIVER_UINT8_UNION_ 1 `uc 1 Val 1 0 `S3214 1 bits 1 0 ]
-[v high_isr@results results `S3223  1 a 1 37 ]
+[u S3227 _DRIVER_UINT8_UNION_ 1 `uc 1 Val 1 0 `S3218 1 bits 1 0 ]
+[v high_isr@results results `S3227  1 a 1 37 ]
 "1922
 [v high_isr@RxBank RxBank `uc  1 a 1 40 ]
-[s S3205 . 2 `uc 1 RF_TXIF 1 0 :1:0 
+[s S3209 . 2 `uc 1 RF_TXIF 1 0 :1:0 
 `uc 1 . 1 0 :2:1 
 `uc 1 RF_RXIF 1 0 :1:3 
 `uc 1 SECIF 1 0 :1:4 
 `uc 1 . 1 1 :4:0 
 ]
 "1878
-[u S3211 . 2 `uc 1 Val 1 0 `S3205 1 bits 2 0 ]
-[v high_isr@flags flags `S3211  1 a 2 38 ]
+[u S3215 . 2 `uc 1 Val 1 0 `S3209 1 bits 2 0 ]
+[v high_isr@flags flags `S3215  1 a 2 38 ]
 "1869
 [v high_isr@i i `uc  1 a 1 41 ]
 "2011

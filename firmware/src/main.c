@@ -78,7 +78,8 @@ extern API_UINT16_UNION                 myShortAddress;                     	// 
 extern ACTIVE_SCAN_RESULT               ActiveScanResults[ACTIVE_SCAN_RESULT_SIZE];		// table des actives scan
 extern RECEIVED_MESSAGE  rxMessage;
 
-int Info = 35;
+int detect = 0;
+int num = 0;
 
 //#define NO_TERM
 #define PSEUDO_MAX_LENGTH  8
@@ -101,7 +102,7 @@ void broadcastData(char *,...);
 void initChat(void);
 void initNwk(void);
 
-
+/****************** MAIN ******************/
 void main (void)
 {
     // Initialisation Carte
@@ -117,13 +118,12 @@ void main (void)
       RX();
       TX();
     }
-
 }
+/******************************************/
 
 
-/**
- * Initialisation du chat : message d'invite et acquisition du pseudo
- */
+/*************** INIT CHAT ****************/
+//Init chat = message d'invite et acquisition du pseudo
 void initChat(void){
 #ifdef NO_TERM
     LCDBacklightON();
@@ -139,116 +139,137 @@ void initChat(void){
     uartPrint("!\r\n");
 #endif    
 }
+/******************************************/
 
+
+/************** INIT RESEAU ***************/
 void initNwk(){
-uint8_t respondingDevices;
-bool found;    
-uint8_t index;
+    uint8_t respondingDevices;
+    bool found;    
+    uint8_t index;
 
-MiApp_ProtocolInit(false);
+    MiApp_ProtocolInit(false);
 
-
-if(MiApp_SetChannel(MY_CHANNEL) == false){			// Réglage canal 11
-    #ifdef NO_TERM
-        LCDDisplay((char *)"Err selection canal",0, true);
-    #else
-        uartPrint("Erreur : selection de canal");
-    #endif
-    goto fin;
-}
-
-respondingDevices = MiApp_SearchConnection(10,1L<<MY_CHANNEL);
-found = false;
-if(respondingDevices !=0){                                                  // Si aucun appareil trouvé
-    for(index = 0; index< respondingDevices;index++){
-        if(found = (ActiveScanResults[index].PANID.Val == MY_PAN_ID))
-            break;
-    }
-}
-// found existing PAN controller
-if(found){                                                              // si on trouve un noeud
-    MiApp_ConnectionMode(ENABLE_ACTIVE_SCAN_RSP);
-    if(MiApp_EstablishConnection(index, CONN_MODE_DIRECT)==0xFF){
-    #ifdef NO_TERM
-        LCDDisplay((char *)"Err connexion refusee",0, true);
-    #else
-        uartPrint("Erreur : connexion refusee");
-    #endif
+    if(MiApp_SetChannel(MY_CHANNEL) == false){			// Réglage canal 11
+        #ifdef NO_TERM
+            LCDDisplay((char *)"Err selection canal",0, true);
+        #else
+            uartPrint("Erreur : selection de canal");
+        #endif
         goto fin;
     }
-    #ifdef NO_TERM
-    LCDDisplay((char *)"Connexion OK",0, true);
-    #else
-        uartPrint("Connexion reussie sur PAN existant\n\r");
-    #endif
-// nobody    
-}else{
-    MiApp_ConnectionMode(ENABLE_ALL_CONN);
-    if(!MiApp_StartConnection(START_CONN_DIRECT,0,0)){
-    #ifdef NO_TERM
-        LCDDisplay((char *)"Er : conn. refusee",0, true);
-    #else
-        uartPrint("Erreur : creation refusee");    
-    #endif
-        goto fin;
+
+    respondingDevices = MiApp_SearchConnection(10,1L<<MY_CHANNEL);
+    found = false;
+    if(respondingDevices !=0){                                                  // Si aucun appareil trouvé
+        for(index = 0; index< respondingDevices;index++){
+            if(found = (ActiveScanResults[index].PANID.Val == MY_PAN_ID))
+                break;
+        }
     }
+    // found existing PAN controller
+    if(found){                                                              // si on trouve un noeud
+        MiApp_ConnectionMode(ENABLE_ACTIVE_SCAN_RSP);
+        if(MiApp_EstablishConnection(index, CONN_MODE_DIRECT)==0xFF){
+        #ifdef NO_TERM
+            LCDDisplay((char *)"Err connexion refusee",0, true);
+        #else
+            uartPrint("Erreur : connexion refusee");
+        #endif
+            goto fin;
+        }
+        #ifdef NO_TERM
+        LCDDisplay((char *)"Connexion OK",0, true);
+        #else
+            uartPrint("Connexion reussie sur PAN existant\n\r");
+        #endif
+    // nobody
+    }
+    else{
+        MiApp_ConnectionMode(ENABLE_ALL_CONN);
+        if(!MiApp_StartConnection(START_CONN_DIRECT,0,0)){
+        #ifdef NO_TERM
+            LCDDisplay((char *)"Er : conn. refusee",0, true);
+        #else
+            uartPrint("Erreur : creation refusee");    
+        #endif
+            goto fin;
+        }
+        #ifdef NO_TERM
+            LCDDisplay((char *)"Nouveau PAN !",0, true);
+        #else
+        uartPrint("Creation d'un nouveau PAN\n\r");
+        #endif
+    }
+    
     #ifdef NO_TERM
-        LCDDisplay((char *)"Nouveau PAN !",0, true);
+        sprintf(LCDText,"Adresse : 0X%04x",myShortAddress);
+        sprintf(&LCDText[16],"sur PAN : 0X%04x",MY_PAN_ID);
+        LCD_Update();
     #else
-    uartPrint("Creation d'un nouveau PAN\n\r");
+        uartPrint("Votre adresse est : 0x");   
+        uartHexaPrint((uint8_t *)&myShortAddress,2);
+        uartPrint("\r\n");  
     #endif
-}
-#ifdef NO_TERM
-    sprintf(LCDText,"Adresse : 0X%04x",myShortAddress);
-    sprintf(&LCDText[16],"sur PAN : 0X%04x",MY_PAN_ID);
-    LCD_Update();
-#else
-    uartPrint("Votre adresse est : 0x");   
-    uartHexaPrint((uint8_t *)&myShortAddress,2);
-    uartPrint("\r\n");  
-#endif
 
     return;
     fin: while(1);
 }
+/******************************************/
 
 
+/************** SAISIE PSEUDO *************/
 //Récupération du pseudo de l'utilisateur
-// @param pseudo : une table de 9 octets contenant le pseudo terminé par un 0 
-
+//@param pseudo : une table de 9 octets contenant le pseudo terminé par un 0 
 void getPseudo(char * pseudo){
     int i = 0;
     do{
-    if(uartIsChar()){
-        pseudo[i++] = uartRead(); 
-    }
+        if(uartIsChar()){
+            pseudo[i++] = uartRead(); 
+        }
     }while((pseudo[i-1]!=0x0D)||(i>=PSEUDO_MAX_LENGTH));
     pseudo[i-1] = 0; 
 }
+/******************************************/
 
+
+/**************** RECEPTION ***************/
 //Gestion des messages entrants
 void RX(void){
     if(MiApp_MessageAvailable()){
         uartPrint("\r\n Message :");
         uartPrint(rxMessage.Payload);
-    MiApp_DiscardMessage();
+        uartPrint("\r\n");
+        MiApp_DiscardMessage();
     }
 }
+/******************************************/
 
 
+/************** TRANSMISSION **************/
 //Gestion des messages sortants
 void TX(void){
     //Evaluating RB2
     MiApp_FlushTx();
-    char * toto = "toto";
+    char * myMessage;
+    sprintf(myMessage, "%s : Vous avez gagn%c %d %c !", myPseudo, 130, num, 36);
+    char * pointeur = myMessage;
     int i = 0;
-    if (PORTBbits.RB2 == 0){
-       while (toto[i]!=0){
-       MiApp_WriteData(toto[i]);
-       i++;
-       } 
-       MiApp_WriteData(0);
+    
+    if (PORTBbits.RB2 != detect){
+        detect = PORTBbits.RB2;
+        if (PORTBbits.RB2 == 0){
+           uartPrint("\r\n");
+           uartPrint(pointeur);
+           while (pointeur[i]!=0){
+                MiApp_WriteData(pointeur[i]);
+                i++;
+           }
+           MiApp_WriteData(0);
+           num ++;
+        }
+        
     }
     MiApp_BroadcastPacket(false);
 }
-
+/*************************************/

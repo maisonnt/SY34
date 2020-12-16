@@ -10298,13 +10298,14 @@ extern API_UINT16_UNION myShortAddress;
 extern ACTIVE_SCAN_RESULT ActiveScanResults[10];
 extern RECEIVED_MESSAGE rxMessage;
 
-int Info = 35;
+int detect = 0;
+int num = 0;
 
-# 89
+# 90
 extern RECEIVED_MESSAGE rxMessage;
 char myPseudo[8+1];
 
-# 97
+# 98
 void getPseudo(char *);
 void RX(void);
 void TX(void);
@@ -10328,7 +10329,6 @@ while(1){
 RX();
 TX();
 }
-
 }
 
 # 127
@@ -10345,13 +10345,15 @@ _uartPrint((char*)"!\r\n");
 
 }
 
+
+
+
 void initNwk(){
 uint8_t respondingDevices;
 bool found;
 uint8_t index;
 
 MiApp_ProtocolInit(0);
-
 
 if(MiApp_SetChannel(11) == 0){
 
@@ -10387,7 +10389,8 @@ goto fin;
 _uartPrint((char*)"Connexion reussie sur PAN existant\n\r");
 
 
-}else{
+}
+else{
 MiApp_ConnectionMode(0x00);
 if(!MiApp_StartConnection(0x00,0,0)){
 
@@ -10404,7 +10407,7 @@ _uartPrint((char*)"Creation d'un nouveau PAN\n\r");
 
 }
 
-# 206
+# 210
 _uartPrint((char*)"Votre adresse est : 0x");
 uartHexaPrint((uint8_t *)&myShortAddress,2);
 _uartPrint((char*)"\r\n");
@@ -10414,7 +10417,7 @@ return;
 fin: while(1);
 }
 
-# 219
+# 224
 void getPseudo(char * pseudo){
 int i = 0;
 do{
@@ -10425,28 +10428,41 @@ pseudo[i++] = uartRead();
 pseudo[i-1] = 0;
 }
 
-
+# 238
 void RX(void){
 if(MiApp_MessageAvailable()){
 _uartPrint((char*)"\r\n Message :");
 _uartPrint((char*)rxMessage.Payload);
+_uartPrint((char*)"\r\n");
 MiApp_DiscardMessage();
 }
 }
 
-
-
+# 251
 void TX(void){
 
 {TxData = 11;};
-char * toto = "toto";
+char myMessage;
+
+
 int i = 0;
+
+if (PORTBbits.RB2 != detect){
+detect = PORTBbits.RB2;
 if (PORTBbits.RB2 == 0){
-while (toto[i-1]!=0){
-TxBuffer[TxData++] = toto[i];
+getPseudo(myMessage);
+char * pointeur = myMessage;
+_uartPrint((char*)"\r\n");
+_uartPrint((char*)pointeur);
+while (pointeur[i]!=0){
+TxBuffer[TxData++] = pointeur[i];
 i++;
 }
+TxBuffer[TxData++] = 0;
+num ++;
 }
-MiApp_BroadcastPacket(1);
+
+}
+MiApp_BroadcastPacket(0);
 }
 
