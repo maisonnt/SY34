@@ -78,8 +78,10 @@ extern API_UINT16_UNION                 myShortAddress;                     	// 
 extern ACTIVE_SCAN_RESULT               ActiveScanResults[ACTIVE_SCAN_RESULT_SIZE];		// table des actives scan
 extern RECEIVED_MESSAGE  rxMessage;
 
-int detect = 0;
-int num = 0;
+int detect1 = 0;
+int detect2 = 0;
+int num1 = 0;
+int num2 = 0;
 
 //#define NO_TERM
 #define PSEUDO_MAX_LENGTH  8
@@ -209,7 +211,7 @@ void initNwk(){
     #else
         uartPrint("Votre adresse est : 0x");   
         uartHexaPrint((uint8_t *)&myShortAddress,2);
-        uartPrint("\r\n");  
+        uartPrint("\r\n");
     #endif
 
     return;
@@ -251,25 +253,59 @@ void RX(void){
 void TX(void){
     //Evaluating RB2
     MiApp_FlushTx();
-    char * myMessage;
-    sprintf(myMessage, "%s : Vous avez gagn%c %d %c !", myPseudo, 130, num, 36);
-    char * pointeur = myMessage;
-    int i = 0;
     
-    if (PORTBbits.RB2 != detect){
-        detect = PORTBbits.RB2;
+    uint8_t adr1;
+    uint8_t adr2;
+    int my_adr = myShortAddress.Val;
+    if (my_adr == 0000){
+        adr1 = 0x0100;
+        adr2 = 0x0200;
+    }
+    if (my_adr == 0100){
+        adr1 = 0x0200;
+        adr2 = 0x0000;
+    }
+    if (my_adr == 0200){
+        adr1 = 0x0000;
+        adr2 = 0x0100;
+    }
+    uint8_t *pt_user1 = &adr1;
+    uint8_t *pt_user2 = &adr2;
+    
+    char myMessage[30];
+    int i = 0;
+
+    if (PORTBbits.RB2 != detect1){
+        detect1 = PORTBbits.RB2;
         if (PORTBbits.RB2 == 0){
+           sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num1, adr1);
            uartPrint("\r\n");
-           uartPrint(pointeur);
-           while (pointeur[i]!=0){
-                MiApp_WriteData(pointeur[i]);
+           uartPrint(myMessage);
+           while (myMessage[i]!=0){
+                MiApp_WriteData(myMessage[i]);
                 i++;
            }
            MiApp_WriteData(0);
-           num ++;
+           num1 ++;
+           MiApp_UnicastAddress(pt_user1,false,false);
         }
-        
     }
-    MiApp_BroadcastPacket(false);
+    
+    if (PORTBbits.RB0 != detect2){
+        detect2 = PORTBbits.RB0;
+        if (PORTBbits.RB0 == 0){
+           sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num2, adr2);
+           uartPrint("\r\n");
+           uartPrint(myMessage);
+           while (myMessage[i]!=0){
+                MiApp_WriteData(myMessage[i]);
+                i++;
+           }
+           MiApp_WriteData(0);
+           num2 ++;
+           MiApp_UnicastAddress(pt_user2, false,false);
+        }
+    }
+    //MiApp_BroadcastPacket(false);
 }
 /*************************************/

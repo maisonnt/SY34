@@ -10298,14 +10298,16 @@ extern API_UINT16_UNION myShortAddress;
 extern ACTIVE_SCAN_RESULT ActiveScanResults[10];
 extern RECEIVED_MESSAGE rxMessage;
 
-int detect = 0;
-int num = 0;
+int detect1 = 0;
+int detect2 = 0;
+int num1 = 0;
+int num2 = 0;
 
-# 90
+# 92
 extern RECEIVED_MESSAGE rxMessage;
 char myPseudo[8+1];
 
-# 98
+# 100
 void getPseudo(char *);
 void RX(void);
 void TX(void);
@@ -10331,10 +10333,10 @@ TX();
 }
 }
 
-# 127
+# 129
 void initChat(void){
 
-# 133
+# 135
 vT100ClearScreen();
 vT100SetCursorPos(0,0);
 _uartPrint((char*)"Saisissez votre pseudo : ");
@@ -10407,7 +10409,7 @@ _uartPrint((char*)"Creation d'un nouveau PAN\n\r");
 
 }
 
-# 210
+# 212
 _uartPrint((char*)"Votre adresse est : 0x");
 uartHexaPrint((uint8_t *)&myShortAddress,2);
 _uartPrint((char*)"\r\n");
@@ -10417,7 +10419,7 @@ return;
 fin: while(1);
 }
 
-# 224
+# 226
 void getPseudo(char * pseudo){
 int i = 0;
 do{
@@ -10428,7 +10430,7 @@ pseudo[i++] = uartRead();
 pseudo[i-1] = 0;
 }
 
-# 238
+# 240
 void RX(void){
 if(MiApp_MessageAvailable()){
 _uartPrint((char*)"\r\n Message :");
@@ -10438,29 +10440,63 @@ MiApp_DiscardMessage();
 }
 }
 
-# 251
+# 253
 void TX(void){
 
 {TxData = 11;};
-char * myMessage;
-sprintf(myMessage, "%s : Vous avez gagn%c %d %c !", myPseudo, 130, num, 36);
-char * pointeur = myMessage;
+
+uint8_t adr1;
+uint8_t adr2;
+int my_adr = myShortAddress.Val;
+if (my_adr == 0000){
+adr1 = 0x0100;
+adr2 = 0x0200;
+}
+if (my_adr == 0100){
+adr1 = 0x0200;
+adr2 = 0x0000;
+}
+if (my_adr == 0200){
+adr1 = 0x0000;
+adr2 = 0x0100;
+}
+uint8_t *pt_user1 = &adr1;
+uint8_t *pt_user2 = &adr2;
+
+char myMessage[30];
 int i = 0;
 
-if (PORTBbits.RB2 != detect){
-detect = PORTBbits.RB2;
+if (PORTBbits.RB2 != detect1){
+detect1 = PORTBbits.RB2;
 if (PORTBbits.RB2 == 0){
+sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num1, adr1);
 _uartPrint((char*)"\r\n");
-_uartPrint((char*)pointeur);
-while (pointeur[i]!=0){
-TxBuffer[TxData++] = pointeur[i];
+_uartPrint((char*)myMessage);
+while (myMessage[i]!=0){
+TxBuffer[TxData++] = myMessage[i];
 i++;
 }
 TxBuffer[TxData++] = 0;
-num ++;
+num1 ++;
+MiApp_UnicastAddress(pt_user1,0,0);
+}
 }
 
+if (PORTBbits.RB0 != detect2){
+detect2 = PORTBbits.RB0;
+if (PORTBbits.RB0 == 0){
+sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num2, adr2);
+_uartPrint((char*)"\r\n");
+_uartPrint((char*)myMessage);
+while (myMessage[i]!=0){
+TxBuffer[TxData++] = myMessage[i];
+i++;
 }
-MiApp_BroadcastPacket(0);
+TxBuffer[TxData++] = 0;
+num2 ++;
+MiApp_UnicastAddress(pt_user2, 0,0);
+}
+}
+
 }
 

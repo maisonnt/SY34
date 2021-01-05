@@ -112,10 +112,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S456 . . . . . . . . . ]
 "6490
 [v _PORTBbits `VS456 ~T0 @X0 0 e@3969 ]
+"194 C:\Program Files (x86)\Microchip\xc8\v1.38\include\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 "206 ../../MLA/framework\miwi/miwi_mesh.h
 [v _TxBuffer `uc ~T0 @X0 -> 0 `x e ]
-"560 ../../MLA/framework\miwi/miwi_api.h
-[v _MiApp_BroadcastPacket `(uc ~T0 @X0 0 ef1`uc ]
+"639 ../../MLA/framework\miwi/miwi_api.h
+[v _MiApp_UnicastAddress `(uc ~T0 @X0 0 ef3`*uc`uc`uc ]
 "11 ../firmware/src/main.c
 [p x WDTEN=OFF ]
 "12
@@ -8309,80 +8311,194 @@ Version 3.2 HI-TECH Software Intermediate Code
 {
 [e = _TxData -> -> 11 `i `uc ]
 }
-"254
-[v _myMessage `uc ~T0 @X0 1 a ]
+"255
+[v _adr1 `uc ~T0 @X0 1 a ]
+"256
+[v _adr2 `uc ~T0 @X0 1 a ]
 "257
-[v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 254: char myMessage;
-[; ;main.c: 257: int i = 0;
-[e = _i -> 0 `i ]
-[; ;main.c: 259: if (PORTBbits.RB2 != detect){
+[v _my_adr `i ~T0 @X0 1 a ]
+[; ;main.c: 255: uint8_t adr1;
+[; ;main.c: 256: uint8_t adr2;
+[; ;main.c: 257: int my_adr = myShortAddress.Val;
+[e = _my_adr -> . _myShortAddress 1 `i ]
+[; ;main.c: 258: if (my_adr == 0000){
+"258
+[e $ ! == _my_adr -> 0 `i 1144  ]
+{
+[; ;main.c: 259: adr1 = 0x0100;
 "259
-[e $ ! != -> . . _PORTBbits 0 2 `i _detect 1144  ]
-{
-[; ;main.c: 260: detect = PORTBbits.RB2;
+[e = _adr1 -> -> 256 `i `uc ]
+[; ;main.c: 260: adr2 = 0x0200;
 "260
-[e = _detect -> . . _PORTBbits 0 2 `i ]
-[; ;main.c: 261: if (PORTBbits.RB2 == 0){
+[e = _adr2 -> -> 512 `i `uc ]
 "261
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 1145  ]
-{
-[; ;main.c: 262: getPseudo(myMessage);
+}
+[e :U 1144 ]
+[; ;main.c: 261: }
+[; ;main.c: 262: if (my_adr == 0100){
 "262
-[e ( _getPseudo (1 -> _myMessage `*uc ]
-"263
-[v _pointeur `*uc ~T0 @X0 1 a ]
-[; ;main.c: 263: char * pointeur = myMessage;
-[e = _pointeur -> _myMessage `*uc ]
-[; ;main.c: 264: _uartPrint((char*)"\r\n");
-"264
-[e ( __uartPrint (1 -> :s 13C `*uc ]
-[; ;main.c: 265: _uartPrint((char*)pointeur);
-"265
-[e ( __uartPrint (1 _pointeur ]
-[; ;main.c: 266: while (pointeur[i]!=0){
-"266
-[e $U 1146  ]
-[e :U 1147 ]
+[e $ ! == _my_adr -> 64 `i 1145  ]
 {
-[; ;main.c: 267: TxBuffer[TxData++] = pointeur[i];
+[; ;main.c: 263: adr1 = 0x0200;
+"263
+[e = _adr1 -> -> 512 `i `uc ]
+[; ;main.c: 264: adr2 = 0x0000;
+"264
+[e = _adr2 -> -> 0 `i `uc ]
+"265
+}
+[e :U 1145 ]
+[; ;main.c: 265: }
+[; ;main.c: 266: if (my_adr == 0200){
+"266
+[e $ ! == _my_adr -> 128 `i 1146  ]
+{
+[; ;main.c: 267: adr1 = 0x0000;
 "267
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + _pointeur * -> _i `x -> -> # *U _pointeur `i `x ]
-[; ;main.c: 268: i++;
+[e = _adr1 -> -> 0 `i `uc ]
+[; ;main.c: 268: adr2 = 0x0100;
 "268
-[e ++ _i -> 1 `i ]
+[e = _adr2 -> -> 256 `i `uc ]
 "269
 }
 [e :U 1146 ]
-"266
-[e $ != -> *U + _pointeur * -> _i `x -> -> # *U _pointeur `i `x `i -> 0 `i 1147  ]
-[e :U 1148 ]
-[; ;main.c: 269: }
-[; ;main.c: 270: TxBuffer[TxData++] = 0;
 "270
-[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 0 `i `uc ]
-[; ;main.c: 271: num ++;
+[v _pt_user1 `*uc ~T0 @X0 1 a ]
+[; ;main.c: 269: }
+[; ;main.c: 270: uint8_t *pt_user1 = &adr1;
+[e = _pt_user1 &U _adr1 ]
 "271
-[e ++ _num -> 1 `i ]
-"272
-}
-[e :U 1145 ]
+[v _pt_user2 `*uc ~T0 @X0 1 a ]
+[; ;main.c: 271: uint8_t *pt_user2 = &adr2;
+[e = _pt_user2 &U _adr2 ]
+"273
+[v _myMessage `uc ~T0 @X0 -> 30 `i a ]
 "274
-}
-[e :U 1144 ]
-[; ;main.c: 272: }
-[; ;main.c: 274: }
-[; ;main.c: 275: MiApp_BroadcastPacket(0);
-"275
-[e ( _MiApp_BroadcastPacket (1 -> -> 0 `i `uc ]
-[; ;main.c: 276: }
+[v _i `i ~T0 @X0 1 a ]
+[; ;main.c: 273: char myMessage[30];
+[; ;main.c: 274: int i = 0;
+[e = _i -> 0 `i ]
+[; ;main.c: 276: if (PORTBbits.RB2 != detect){
 "276
+[e $ ! != -> . . _PORTBbits 0 2 `i _detect 1147  ]
+{
+[; ;main.c: 277: detect = PORTBbits.RB2;
+"277
+[e = _detect -> . . _PORTBbits 0 2 `i ]
+[; ;main.c: 278: if (PORTBbits.RB2 == 0){
+"278
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 1148  ]
+{
+[; ;main.c: 279: sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num, adr1);
+"279
+[e ( _sprintf (1 , , , (. , &U _myMessage :s 13C -> &U _myPseudo `*Cuc _num -> _adr1 `i ]
+[; ;main.c: 280: _uartPrint((char*)"\r\n");
+"280
+[e ( __uartPrint (1 -> :s 14C `*uc ]
+[; ;main.c: 281: _uartPrint((char*)myMessage);
+"281
+[e ( __uartPrint (1 &U _myMessage ]
+[; ;main.c: 282: while (myMessage[i]!=0){
+"282
+[e $U 1149  ]
+[e :U 1150 ]
+{
+[; ;main.c: 283: TxBuffer[TxData++] = myMessage[i];
+"283
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U _myMessage * -> -> _i `ui `ux -> -> # *U &U _myMessage `ui `ux ]
+[; ;main.c: 284: i++;
+"284
+[e ++ _i -> 1 `i ]
+"285
+}
+[e :U 1149 ]
+"282
+[e $ != -> *U + &U _myMessage * -> -> _i `ui `ux -> -> # *U &U _myMessage `ui `ux `i -> 0 `i 1150  ]
+[e :U 1151 ]
+[; ;main.c: 285: }
+[; ;main.c: 286: TxBuffer[TxData++] = 0;
+"286
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 287: num ++;
+"287
+[e ++ _num -> 1 `i ]
+[; ;main.c: 288: MiApp_UnicastAddress(pt_user1,0,0);
+"288
+[e ( _MiApp_UnicastAddress (3 , , _pt_user1 -> -> 0 `i `uc -> -> 0 `i `uc ]
+"289
+}
+[e :U 1148 ]
+"290
+}
+[e :U 1147 ]
+[; ;main.c: 289: }
+[; ;main.c: 290: }
+[; ;main.c: 292: if (PORTBbits.RB0 != detect){
+"292
+[e $ ! != -> . . _PORTBbits 0 0 `i _detect 1152  ]
+{
+[; ;main.c: 293: detect = PORTBbits.RB0;
+"293
+[e = _detect -> . . _PORTBbits 0 0 `i ]
+[; ;main.c: 294: if (PORTBbits.RB0 == 0){
+"294
+[e $ ! == -> . . _PORTBbits 0 0 `i -> 0 `i 1153  ]
+{
+[; ;main.c: 295: sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num, adr2);
+"295
+[e ( _sprintf (1 , , , (. , &U _myMessage :s 15C -> &U _myPseudo `*Cuc _num -> _adr2 `i ]
+[; ;main.c: 296: _uartPrint((char*)"\r\n");
+"296
+[e ( __uartPrint (1 -> :s 16C `*uc ]
+[; ;main.c: 297: _uartPrint((char*)myMessage);
+"297
+[e ( __uartPrint (1 &U _myMessage ]
+[; ;main.c: 298: while (myMessage[i]!=0){
+"298
+[e $U 1154  ]
+[e :U 1155 ]
+{
+[; ;main.c: 299: TxBuffer[TxData++] = myMessage[i];
+"299
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux *U + &U _myMessage * -> -> _i `ui `ux -> -> # *U &U _myMessage `ui `ux ]
+[; ;main.c: 300: i++;
+"300
+[e ++ _i -> 1 `i ]
+"301
+}
+[e :U 1154 ]
+"298
+[e $ != -> *U + &U _myMessage * -> -> _i `ui `ux -> -> # *U &U _myMessage `ui `ux `i -> 0 `i 1155  ]
+[e :U 1156 ]
+[; ;main.c: 301: }
+[; ;main.c: 302: TxBuffer[TxData++] = 0;
+"302
+[e = *U + &U _TxBuffer * -> ++ _TxData -> -> 1 `i `uc `ux -> -> # *U &U _TxBuffer `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 303: num ++;
+"303
+[e ++ _num -> 1 `i ]
+[; ;main.c: 304: MiApp_UnicastAddress(pt_user2, 0,0);
+"304
+[e ( _MiApp_UnicastAddress (3 , , _pt_user2 -> -> 0 `i `uc -> -> 0 `i `uc ]
+"305
+}
+[e :U 1153 ]
+"306
+}
+[e :U 1152 ]
+[; ;main.c: 305: }
+[; ;main.c: 306: }
+[; ;main.c: 308: }
+"308
 [e :UE 1143 ]
 }
+[p f _sprintf 8650880 ]
 [a 9C 86 111 116 114 101 32 97 100 114 101 115 115 101 32 101 115 116 32 58 32 48 120 0 ]
 [a 4C 69 114 114 101 117 114 32 58 32 115 101 108 101 99 116 105 111 110 32 100 101 32 99 97 110 97 108 0 ]
 [a 5C 69 114 114 101 117 114 32 58 32 99 111 110 110 101 120 105 111 110 32 114 101 102 117 115 101 101 0 ]
 [a 7C 69 114 114 101 117 114 32 58 32 99 114 101 97 116 105 111 110 32 114 101 102 117 115 101 101 0 ]
+[a 13C 32 80 115 101 117 100 111 32 58 32 37 115 44 32 109 101 115 115 97 103 101 32 117 110 105 99 97 115 116 32 37 100 32 118 101 114 115 32 37 100 0 ]
+[a 15C 32 80 115 101 117 100 111 32 58 32 37 115 44 32 109 101 115 115 97 103 101 32 117 110 105 99 97 115 116 32 37 100 32 118 101 114 115 32 37 100 0 ]
 [a 11C 13 10 32 77 101 115 115 97 103 101 32 58 0 ]
 [a 2C 13 10 32 66 111 110 106 111 117 114 32 58 32 0 ]
 [a 1C 83 97 105 115 105 115 115 101 122 32 118 111 116 114 101 32 112 115 101 117 100 111 32 58 32 0 ]
@@ -8391,4 +8507,5 @@ Version 3.2 HI-TECH Software Intermediate Code
 [a 3C 33 13 10 0 ]
 [a 10C 13 10 0 ]
 [a 12C 13 10 0 ]
-[a 13C 13 10 0 ]
+[a 14C 13 10 0 ]
+[a 16C 13 10 0 ]

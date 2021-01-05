@@ -150,8 +150,8 @@
 #define EUI_6 0x66
 #define EUI_5 0x55
 #define EUI_4 0x44
-#define EUI_3 0x33
-#define EUI_2 0x22
+#define EUI_3 0x11
+#define EUI_2 0x11
 #define EUI_1 0x11
 #define EUI_0 0x00
 

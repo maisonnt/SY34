@@ -5,9 +5,9 @@ Linker command line:
 --edf=C:\Program Files (x86)\Microchip\xc8\v1.38\dat\en_msgs.txt -cs \
   -h+dist/default/production\Projet_MPLAB.X.production.sym \
   --cmf=dist/default/production\Projet_MPLAB.X.production.cmf -z -Q18F46J50 \
-  -oC:\Users\tpeea\AppData\Local\Temp\sa70.2 \
+  -oC:\Users\tpeea\AppData\Local\Temp\s5fs.2 \
   -Mdist/default/production/Projet_MPLAB.X.production.map -E1 -ver=XC8 \
-  -ASTACK=038Ch-0ebfh -pstack=STACK -ACODE=00h-0FFF7h -ACONST=00h-0FFF7h \
+  -ASTACK=03ADh-0ebfh -pstack=STACK -ACODE=00h-0FFF7h -ACONST=00h-0FFF7h \
   -ASMALLCONST=0F00h-0FFFhx240,0FF00h-0FFF7h -AMEDIUMCONST=0F00h-0FFF7h \
   -ACOMRAM=01h-05Fh -AABS1=00h-0EBFh -ABIGRAM=01h-0EBFh \
   -ARAM=060h-0FFh,0100h-01FFhx13,0E00h-0EBFh -ABANK0=060h-0FFh \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\tpeea\AppData\Local\Temp\sa70.obj \
+  C:\Users\tpeea\AppData\Local\Temp\s5fs.obj \
   dist/default/production\Projet_MPLAB.X.production.obj 
 
 Object code version is 3.11
@@ -38,97 +38,100 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\tpeea\AppData\Local\Temp\sa70.obj
+C:\Users\tpeea\AppData\Local\Temp\s5fs.obj
                 end_init                            1F2      1F2        4        4       0
                 reset_vec                             0        0        4        0       0
                 config                             FFF8     FFF8        8     FFF8       0
 dist/default/production\Projet_MPLAB.X.production.obj
                 intcode                               8        8      1EA        4       0
                 temp                                 55       55        1        1       1
-                mediumconst                        FE70     FE70      188     7F38       0
-                text67                             4B2E     4B2E       56        4       0
-                text66                             4628     4628       8C        4       0
-                text65                             3FF0     3FF0       B6        4       0
-                text64                             4F14     4F14       18        4       0
-                text63                             4EE2     4EE2       1A        4       0
-                text62                             4F7C     4F7C        A        4       0
-                text61                             4BD8     4BD8       52        4       0
-                text60                             4DFE     4DFE       2A        4       0
-                text59                             4E28     4E28       28        4       0
-                text57                             4EAC     4EAC       1C        4       0
-                text56                             4F98     4F98        8        4       0
-                text55                             3CEA     3CEA       CC        4       0
-                text54                             46B4     46B4       88        4       0
-                text53                             4CB8     4CB8       40        4       0
-                text52                             3B02     3B02      102        4       0
-                text51                             4930     4930       70        4       0
-                text50                             4C74     4C74       44        4       0
-                text49                             3F36     3F36       BA        4       0
-                text48                             172C     172C      6D2        4       0
-                text47                             4E90     4E90       1C        4       0
-                text46                             4ACC     4ACC       62        4       0
-                text45                             4DA0     4DA0       32        4       0
-                text44                             4B84     4B84       54        4       0
-                text43                             4F72     4F72        A        4       0
-                text42                             4A06     4A06       64        4       0
-                text41                             4D6A     4D6A       36        4       0
-                text40                             3246     3246      2B4        4       0
-                text39                             49A0     49A0       66        4       0
-                text38                             1DFE     1DFE      4BA        4       0
-                text37                             4150     4150       AA        4       0
-                text36                             3C04     3C04       E6        4       0
-                text35                             22B8     22B8      4B8        4       0
-                text34                             459A     459A       8E        4       0
-                text33                              1F6      1F6     1536        4       0
-                text32                             4F54     4F54       10        4       0
-                text31                             4F64     4F64        E        4       0
-                text30                             450C     450C       8E        4       0
-                text29                             4CF8     4CF8       3C        4       0
-                text28                             48BA     48BA       76        4       0
-                text27                             40A6     40A6       AA        4       0
-                text26                             4E74     4E74       1C        4       0
-                text25                             473C     473C       84        4       0
-                text24                             447A     447A       92        4       0
-                text23                             4840     4840       7A        4       0
-                text22                             4FA2     4FA2        2        4       0
-                text21                             4D34     4D34       36        4       0
-                text20                             3DB6     3DB6       C2        4       0
-                text19                             39F2     39F2      110        4       0
-                text18                             4F42     4F42       12        4       0
-                text17                             3E78     3E78       BE        4       0
-                text16                             41FA     41FA       A2        4       0
-                text15                             433C     433C       A0        4       0
-                text14                             4A6A     4A6A       62        4       0
-                text13                             4DD2     4DD2       2C        4       0
-                text12                             4E50     4E50       24        4       0
-                text11                             34FA     34FA      234        4       0
-                text10                             2770     2770      442        4       0
-                text9                              2F92     2F92      2B4        4       0
-                text8                              2BB2     2BB2      3E0        4       0
-                text7                              4F2C     4F2C       16        4       0
-                text6                              4C2A     4C2A       4A        4       0
-                text5                              389E     389E      154        4       0
-                text4                              47C0     47C0       80        4       0
-                text3                              429C     429C       A0        4       0
-                text2                              372E     372E      170        4       0
-                text1                              4EFC     4EFC       18        4       0
-                text0                              4EC8     4EC8       1A        4       0
+                mediumconst                        FE40     FE40      1B8     7F20       0
+                text71                             582C     582C       56        4       0
+                text70                             52C4     52C4       8C        4       0
+                text69                             4CA0     4CA0       B0        4       0
+                text68                             5C72     5C72       18        4       0
+                text67                             5C40     5C40       1A        4       0
+                text66                             5CEC     5CEC        A     2E62       0
+                text65                             58D6     58D6       52        4       0
+                text64                             5B5C     5B5C       2A        4       0
+                text63                             5B86     5B86       28        4       0
+                text61                             5C0A     5C0A       1C        4       0
+                text60                             5CF6     5CF6        8     2E62       0
+                text59                             499A     499A       CC        4       0
+                text58                             5350     5350       88        4       0
+                text57                             59B6     59B6       40        4       0
+                text56                             47B2     47B2      102        4       0
+                text55                             55CC     55CC       70        4       0
+                text54                             5972     5972       44        4       0
+                text53                             4BE6     4BE6       BA        4       0
+                text52                             2214     2214      6D2        4       0
+                text51                             5BEE     5BEE       1C        4       0
+                text50                             57CA     57CA       62        4       0
+                text49                             5AD4     5AD4       32        4       0
+                text48                             5882     5882       54        4       0
+                text47                             5CE2     5CE2        A     2E62       0
+                text46                             56A2     56A2       64        4       0
+                text45                             5A9E     5A9E       36        4       0
+                text44                             4006     4006      2B4        4       0
+                text43                             563C     563C       66        4       0
+                text42                             28E6     28E6      4BA        4       0
+                text41                             4DFA     4DFA       AA        4       0
+                text40                             48B4     48B4       E6        4       0
+                text39                             2DA0     2DA0      4B8        4       0
+                text38                             5236     5236       8E        4       0
+                text37                              1F6      1F6     1542        4       0
+                text36                             5CC4     5CC4       10     2E62       0
+                text35                             5CD4     5CD4        E     2E62       0
+                text34                             51A8     51A8       8E        4       0
+                text33                             59F6     59F6       3C        4       0
+                text32                             5556     5556       76        4       0
+                text31                             4D50     4D50       AA        4       0
+                text30                             5BD2     5BD2       1C        4       0
+                text29                             53D8     53D8       84        4       0
+                text28                             5086     5086       92        4       0
+                text27                             3258     3258      442        4       0
+                text26                             54DE     54DE       78        4       0
+                text25                             5768     5768       62        4       0
+                text24                             5A68     5A68       36        4       0
+                text23                             5B32     5B32       2A        4       0
+                text22                             1738     1738      ADC        4       0
+                text21                             3A9C     3A9C      2B6        4       0
+                text20                             5D00     5D00        2     2E62       0
+                text19                             5A32     5A32       36        4       0
+                text18                             4A66     4A66       C2        4       0
+                text17                             5CA0     5CA0       12        4       0
+                text16                             4B28     4B28       BE        4       0
+                text15                             4EA4     4EA4       A2        4       0
+                text14                             4FE6     4FE6       A0        4       0
+                text13                             5706     5706       62        4       0
+                text12                             5B06     5B06       2C        4       0
+                text11                             5BAE     5BAE       24        4       0
+                text10                             42BA     42BA      234        4       0
+                text9                              3D52     3D52      2B4        4       0
+                text8                              369A     369A      402        4       0
+                text7                              5C8A     5C8A       16        4       0
+                text6                              5928     5928       4A        4       0
+                text5                              465E     465E      154        4       0
+                text4                              545C     545C       82        4       0
+                text3                              4F46     4F46       A0        4       0
+                text2                              44EE     44EE      170        4       0
+                text1                              5C5A     5C5A       18        4       0
+                text0                              5C26     5C26       1A        4       0
                 cstackCOMRAM                          1        1       2A        1       1
                 cstackBANK0                          60       60       9C       60       1
-                cstackBANK1                         1EA      1EA        B      100       1
-                cstackBANK2                         2EA      2EA        A      200       1
-                bssBANK3                            300      300       8C      300       1
-                dataBANK2                           2F4      2F4        9      200       1
-                bssBANK2                            200      200       EA      200       1
-                dataBANK1                           1F5      1F5        9      100       1
-                bssBANK1                            100      100       EA      100       1
+                cstackBANK1                         1D2      1D2       28      100       1
+                bssBANK3                            300      300       AD      300       1
+                dataBANK2                           2E1      2E1       11      200       1
+                bssBANK2                            200      200       E1      200       1
+                dataBANK1                           1FA      1FA        1      100       1
+                bssBANK1                            100      100       D2      100       1
                 bssBANK0                             FC       FC        3       60       1
                 dataCOMRAM                           53       53        2        1       1
                 bssCOMRAM                            2B       2B       28        1       1
-                cinit                              43DC     43DC       9E        4       0
-                idataBANK2                         4F8F     4F8F        9        4       0
-                idataBANK1                         4F86     4F86        9        4       0
-                idataCOMRAM                        4FA0     4FA0        2        4       0
+                cinit                              5118     5118       90        4       0
+                idataBANK2                         5CB2     5CB2       11        4       0
+                idataBANK1                         5D02     5D02        1     2E62       0
+                idataCOMRAM                        5CFE     5CFE        2     2E62       0
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   STACK          
@@ -137,84 +140,88 @@ TOTAL           Name                               Link     Load   Length     Sp
                 end_init                            1F2      1F2        4         0
                 intcode                               8        8      1EA         0
                 reset_vec                             0        0        4         0
-                text67                             4B2E     4B2E       56         0
-                text66                             4628     4628       8C         0
-                text65                             3FF0     3FF0       B6         0
-                text64                             4F14     4F14       18         0
-                text63                             4EE2     4EE2       1A         0
-                text62                             4F7C     4F7C        A         0
-                text61                             4BD8     4BD8       52         0
-                text60                             4DFE     4DFE       2A         0
-                text59                             4E28     4E28       28         0
-                text57                             4EAC     4EAC       1C         0
-                text56                             4F98     4F98        8         0
-                text55                             3CEA     3CEA       CC         0
-                text54                             46B4     46B4       88         0
-                text53                             4CB8     4CB8       40         0
-                text52                             3B02     3B02      102         0
-                text51                             4930     4930       70         0
-                text50                             4C74     4C74       44         0
-                text49                             3F36     3F36       BA         0
-                text48                             172C     172C      6D2         0
-                text47                             4E90     4E90       1C         0
-                text46                             4ACC     4ACC       62         0
-                text45                             4DA0     4DA0       32         0
-                text44                             4B84     4B84       54         0
-                text43                             4F72     4F72        A         0
-                text42                             4A06     4A06       64         0
-                text41                             4D6A     4D6A       36         0
-                text40                             3246     3246      2B4         0
-                text39                             49A0     49A0       66         0
-                text38                             1DFE     1DFE      4BA         0
-                text37                             4150     4150       AA         0
-                text36                             3C04     3C04       E6         0
-                text35                             22B8     22B8      4B8         0
-                text34                             459A     459A       8E         0
-                text33                              1F6      1F6     1536         0
-                text32                             4F54     4F54       10         0
-                text31                             4F64     4F64        E         0
-                text30                             450C     450C       8E         0
-                text29                             4CF8     4CF8       3C         0
-                text28                             48BA     48BA       76         0
-                text27                             40A6     40A6       AA         0
-                text26                             4E74     4E74       1C         0
-                text25                             473C     473C       84         0
-                text24                             447A     447A       92         0
-                text23                             4840     4840       7A         0
-                text22                             4FA2     4FA2        2         0
-                text21                             4D34     4D34       36         0
-                text20                             3DB6     3DB6       C2         0
-                text19                             39F2     39F2      110         0
-                text18                             4F42     4F42       12         0
-                text17                             3E78     3E78       BE         0
-                text16                             41FA     41FA       A2         0
-                text15                             433C     433C       A0         0
-                text14                             4A6A     4A6A       62         0
-                text13                             4DD2     4DD2       2C         0
-                text12                             4E50     4E50       24         0
-                text11                             34FA     34FA      234         0
-                text10                             2770     2770      442         0
-                text9                              2F92     2F92      2B4         0
-                text8                              2BB2     2BB2      3E0         0
-                text7                              4F2C     4F2C       16         0
-                text6                              4C2A     4C2A       4A         0
-                text5                              389E     389E      154         0
-                text4                              47C0     47C0       80         0
-                text3                              429C     429C       A0         0
-                text2                              372E     372E      170         0
-                text1                              4EFC     4EFC       18         0
-                text0                              4EC8     4EC8       1A         0
-                cinit                              43DC     43DC       9E         0
-                idataBANK2                         4F8F     4F8F        9         0
-                idataBANK1                         4F86     4F86        9         0
-                idataCOMRAM                        4FA0     4FA0        2         0
+                text71                             582C     582C       56         0
+                text70                             52C4     52C4       8C         0
+                text69                             4CA0     4CA0       B0         0
+                text68                             5C72     5C72       18         0
+                text67                             5C40     5C40       1A         0
+                text66                             5CEC     5CEC        A         0
+                text65                             58D6     58D6       52         0
+                text64                             5B5C     5B5C       2A         0
+                text63                             5B86     5B86       28         0
+                text61                             5C0A     5C0A       1C         0
+                text60                             5CF6     5CF6        8         0
+                text59                             499A     499A       CC         0
+                text58                             5350     5350       88         0
+                text57                             59B6     59B6       40         0
+                text56                             47B2     47B2      102         0
+                text55                             55CC     55CC       70         0
+                text54                             5972     5972       44         0
+                text53                             4BE6     4BE6       BA         0
+                text52                             2214     2214      6D2         0
+                text51                             5BEE     5BEE       1C         0
+                text50                             57CA     57CA       62         0
+                text49                             5AD4     5AD4       32         0
+                text48                             5882     5882       54         0
+                text47                             5CE2     5CE2        A         0
+                text46                             56A2     56A2       64         0
+                text45                             5A9E     5A9E       36         0
+                text44                             4006     4006      2B4         0
+                text43                             563C     563C       66         0
+                text42                             28E6     28E6      4BA         0
+                text41                             4DFA     4DFA       AA         0
+                text40                             48B4     48B4       E6         0
+                text39                             2DA0     2DA0      4B8         0
+                text38                             5236     5236       8E         0
+                text37                              1F6      1F6     1542         0
+                text36                             5CC4     5CC4       10         0
+                text35                             5CD4     5CD4        E         0
+                text34                             51A8     51A8       8E         0
+                text33                             59F6     59F6       3C         0
+                text32                             5556     5556       76         0
+                text31                             4D50     4D50       AA         0
+                text30                             5BD2     5BD2       1C         0
+                text29                             53D8     53D8       84         0
+                text28                             5086     5086       92         0
+                text27                             3258     3258      442         0
+                text26                             54DE     54DE       78         0
+                text25                             5768     5768       62         0
+                text24                             5A68     5A68       36         0
+                text23                             5B32     5B32       2A         0
+                text22                             1738     1738      ADC         0
+                text21                             3A9C     3A9C      2B6         0
+                text20                             5D00     5D00        2         0
+                text19                             5A32     5A32       36         0
+                text18                             4A66     4A66       C2         0
+                text17                             5CA0     5CA0       12         0
+                text16                             4B28     4B28       BE         0
+                text15                             4EA4     4EA4       A2         0
+                text14                             4FE6     4FE6       A0         0
+                text13                             5706     5706       62         0
+                text12                             5B06     5B06       2C         0
+                text11                             5BAE     5BAE       24         0
+                text10                             42BA     42BA      234         0
+                text9                              3D52     3D52      2B4         0
+                text8                              369A     369A      402         0
+                text7                              5C8A     5C8A       16         0
+                text6                              5928     5928       4A         0
+                text5                              465E     465E      154         0
+                text4                              545C     545C       82         0
+                text3                              4F46     4F46       A0         0
+                text2                              44EE     44EE      170         0
+                text1                              5C5A     5C5A       18         0
+                text0                              5C26     5C26       1A         0
+                cinit                              5118     5118       90         0
+                idataBANK2                         5CB2     5CB2       11         0
+                idataBANK1                         5D02     5D02        1         0
+                idataCOMRAM                        5CFE     5CFE        2         0
 
         CLASS   CONST          
 
         CLASS   SMALLCONST     
 
         CLASS   MEDIUMCONST    
-                mediumconst                        FE70     FE70      188         0
+                mediumconst                        FE40     FE40      1B8         0
 
         CLASS   COMRAM         
                 temp                                 55       55        1         1
@@ -233,17 +240,16 @@ TOTAL           Name                               Link     Load   Length     Sp
                 bssBANK0                             FC       FC        3         1
 
         CLASS   BANK1          
-                cstackBANK1                         1EA      1EA        B         1
-                dataBANK1                           1F5      1F5        9         1
-                bssBANK1                            100      100       EA         1
+                cstackBANK1                         1D2      1D2       28         1
+                dataBANK1                           1FA      1FA        1         1
+                bssBANK1                            100      100       D2         1
 
         CLASS   BANK2          
-                cstackBANK2                         2EA      2EA        A         1
-                dataBANK2                           2F4      2F4        9         1
-                bssBANK2                            200      200       EA         1
+                dataBANK2                           2E1      2E1       11         1
+                bssBANK2                            200      200       E1         1
 
         CLASS   BANK3          
-                bssBANK3                            300      300       8C         1
+                bssBANK3                            300      300       AD         1
 
         CLASS   BANK4          
 
@@ -282,12 +288,13 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
 
                 reset_vec                      000000  000004  000004         0       0  CODE    
                 cstackCOMRAM                   000001  000055  000056         1       1  COMRAM  
-                intcode                        000008  004F9C  004FA4         4       0  CODE    
+                intcode                        000008  005CBB  005CC3         4       0  CODE    
                 cstackBANK0                    000060  00009F  0000FF        60       1  BANK0   
-                bssBANK1                       000100  0000FE  0001FE       100       1  BANK1   
-                bssBANK2                       000200  0000FD  0002FD       200       1  BANK2   
-                bssBANK3                       000300  00008C  00038C       300       1  BANK3   
-                mediumconst                    00FE70  000188  00FFF8      7F38       0  MEDIUMCO
+                bssBANK1                       000100  0000FB  0001FB       100       1  BANK1   
+                bssBANK2                       000200  0000F2  0002F2       200       1  BANK2   
+                bssBANK3                       000300  0000AD  0003AD       300       1  BANK3   
+                text36                         005CC4  00003F  005D03      2E62       0  CODE    
+                mediumconst                    00FE40  0001B8  00FFF8      7F20       0  MEDIUMCO
                 config                         00FFF8  000008  010000      FFF8       0  CONFIG  
 
 
@@ -295,14 +302,14 @@ UNUSED ADDRESS RANGES
 
         Name                Unused          Largest block    Delta
         BANK0            000FF-000FF               1
-        BANK1            001FE-001FF               2
+        BANK1            001FB-001FF               5
         BANK10           00A00-00AFF             100
         BANK11           00B00-00BFF             100
         BANK12           00C00-00CFF             100
         BANK13           00D00-00DFF             100
         BANK14           00E00-00EBF              C0
-        BANK2            002FD-002FF               3
-        BANK3            0038C-003FF              74
+        BANK2            002F2-002FF               E
+        BANK3            003AD-003FF              53
         BANK4            00400-004FF             100
         BANK5            00500-005FF             100
         BANK6            00600-006FF             100
@@ -311,22 +318,26 @@ UNUSED ADDRESS RANGES
         BANK9            00900-009FF             100
         BIGRAM           00056-0005F               A
                          000FF-000FF               1
-                         001FE-001FF               2
-                         002FD-002FF               3
-                         0038C-00EBF             B34
+                         001FB-001FF               5
+                         002F2-002FF               E
+                         003AD-00EBF             B13
         CODE             00004-00007               4
-                         04FA4-0FE6F            AECC
+                         05CC3-05CC3               1
+                         05D03-0FE3F            A13D
         COMRAM           00056-0005F               A
         CONST            00004-00007               4
-                         04FA4-0FE6F            AECC
-        MEDIUMCONST      04FA4-0FE6F            AECC
+                         05CC3-05CC3               1
+                         05D03-0FE3F            A13D
+        MEDIUMCONST      05CC3-05CC3               1
+                         05D03-0FE3F            A13D
         RAM              000FF-000FF               1
-                         001FE-001FF               2
-                         002FD-002FF               3
-                         0038C-00EBF             100
+                         001FB-001FF               5
+                         002F2-002FF               E
+                         003AD-00EBF             100
         SFR              00EC0-00FFF              60
-        SMALLCONST       04FA4-0FE6F             100
-        STACK            0038C-00EBF             B34
+        SMALLCONST       05CC3-05CC3               1
+                         05D03-0FE3F             100
+        STACK            003AD-00EBF             B13
 
                                   Symbol Table
 
@@ -334,6 +345,10 @@ UNUSED ADDRESS RANGES
 ?___awdiv                                 cstackBANK0   00060
 ?___awmod                                 cstackBANK0   00060
 ?___lmul                                  cstackBANK0   00060
+?___lwdiv                                 cstackBANK0   00060
+?___lwmod                                 cstackBANK0   00067
+?___wmul                                  cstackBANK0   00060
+?_sprintf                                 cstackBANK0   0006C
 ?i2___lmul                                cstackCOMRAM  00001
 AddNodeToNetworkTable@handle              cstackBANK0   00069
 AddNodeToNetworkTable@i                   cstackBANK0   00068
@@ -346,18 +361,17 @@ DELAY_ms@ms                               cstackBANK0   0006C
 I2CWrite@BufferLen                        cstackBANK0   00060
 I2CWrite@Commandlen                       cstackBANK0   00061
 InitMRF24J40@_dcnt                        cstackBANK0   0006B
-InitMRF24J40@_dcnt_3329                   cstackBANK0   0006F
+InitMRF24J40@_dcnt_3332                   cstackBANK0   0006F
 InitMRF24J40@_ms                          cstackBANK0   00073
-InitMRF24J40@_ms_3330                     cstackBANK0   00077
+InitMRF24J40@_ms_3333                     cstackBANK0   00077
 InitMRF24J40@i                            cstackBANK0   0007D
 InitMRF24J40@j                            cstackBANK0   0007B
-MiApp_BroadcastPacket@SecEn               cstackBANK0   0009D
 MiApp_ConnectionMode@Mode                 cstackBANK0   00061
-MiApp_EstablishConnection@ActiveScanIndex cstackBANK2   002F3
+MiApp_EstablishConnection@ActiveScanIndex cstackBANK1   001E3
 MiApp_EstablishConnection@Mode            cstackBANK0   000F9
-MiApp_EstablishConnection@retry           cstackBANK2   002F2
-MiApp_EstablishConnection@t1              cstackBANK2   002EA
-MiApp_EstablishConnection@t2              cstackBANK2   002EE
+MiApp_EstablishConnection@retry           cstackBANK1   001E2
+MiApp_EstablishConnection@t1              cstackBANK1   001DA
+MiApp_EstablishConnection@t2              cstackBANK1   001DE
 MiApp_ProtocolInit@MIP                    cstackBANK0   00084
 MiApp_ProtocolInit@bNetworkFreezer        cstackBANK0   00083
 MiApp_ProtocolInit@i                      cstackBANK0   00087
@@ -379,9 +393,9 @@ MiApp_UnicastAddress@SecEn                cstackBANK0   000DC
 MiApp_UnicastAddress@handle               cstackBANK0   000F7
 MiApp_UnicastAddress@i                    cstackBANK0   000F6
 MiApp_UnicastAddress@t1                   cstackBANK0   000E5
-MiApp_UnicastAddress@t1_2920              cstackBANK0   000ED
+MiApp_UnicastAddress@t1_2923              cstackBANK0   000ED
 MiApp_UnicastAddress@t2                   cstackBANK0   000E9
-MiApp_UnicastAddress@t2_2931              cstackBANK0   000F1
+MiApp_UnicastAddress@t2_2934              cstackBANK0   000F1
 MiMAC_Init@i                              cstackBANK0   00081
 MiMAC_Init@initValue                      cstackBANK0   0007E
 MiMAC_ReceivedPacket@addrMode             cstackBANK0   00066
@@ -412,10 +426,10 @@ MiWiTasks@entry                           cstackBANK0   000BF
 MiWiTasks@handle                          cstackBANK0   000D4
 MiWiTasks@i                               cstackBANK0   000D8
 MiWiTasks@j                               cstackBANK0   000D7
-MiWiTasks@j_2677                          cstackBANK0   000CC
-MiWiTasks@j_2729                          cstackBANK0   000CF
-MiWiTasks@j_2740                          cstackBANK0   000C6
-MiWiTasks@j_2741                          cstackBANK0   000C9
+MiWiTasks@j_2680                          cstackBANK0   000CC
+MiWiTasks@j_2732                          cstackBANK0   000CF
+MiWiTasks@j_2743                          cstackBANK0   000C6
+MiWiTasks@j_2744                          cstackBANK0   000C9
 MiWiTasks@mask                            cstackBANK0   000BE
 MiWiTasks@rxIndex                         cstackBANK0   000CA
 MiWiTasks@sourcePANID                     cstackBANK0   000D2
@@ -451,36 +465,40 @@ SendMACPacket@Address                     cstackBANK0   0009F
 SendMACPacket@ModeMask                    cstackBANK0   000A2
 SendMACPacket@PANID                       cstackBANK0   0009D
 SendMACPacket@PacketType                  cstackBANK0   000A1
-TX@i                                      cstackBANK0   000A1
-TX@myMessage                              cstackBANK0   000A0
-TX@pointeur                               cstackBANK0   000A3
+TX@adr1                                   cstackBANK1   001F8
+TX@adr2                                   cstackBANK1   001F9
+TX@i                                      cstackBANK1   001F6
+TX@myMessage                              cstackBANK1   001D2
+TX@my_adr                                 cstackBANK1   001F4
+TX@pt_user1                               cstackBANK1   001F0
+TX@pt_user2                               cstackBANK1   001F2
 UnicastShortAddress@DestAddress           cstackBANK0   000AE
 _ANCON0                                   (abs)         00F48
 _ANCON1                                   (abs)         00F49
-_AcknowledgementAddr                      bssBANK1      00131
-_AcknowledgementSeq                       dataBANK1     001F5
+_AcknowledgementAddr                      bssBANK1      00119
+_AcknowledgementSeq                       dataBANK1     001FA
 _ActiveScanResultIndex                    bssCOMRAM     0003F
 _ActiveScanResults                        bssBANK3      00300
-_AddNodeToNetworkTable                    text52        03B02
+_AddNodeToNetworkTable                    text56        047B2
 _BAUDCON1bits                             (abs)         00F7E
 _BankIndex                                dataCOMRAM    00053
-_BroadcastJitter                          text49        03F36
+_BroadcastJitter                          text53        04BE6
 _BroadcastRecords                         bssBANK2      00200
-_CommandLen                               bssBANK1      00139
-_CommandPtr                               bssCOMRAM     00040
-_ConnMode                                 bssCOMRAM     00041
-_ConnectionTable                          bssBANK1      00140
-_DELAY_ms                                 text27        040A6
+_CommandLen                               bssCOMRAM     00040
+_CommandPtr                               bssCOMRAM     00041
+_ConnMode                                 bssCOMRAM     00042
+_ConnectionTable                          bssBANK1      00128
+_DELAY_ms                                 text31        04D50
 _EECON2                                   (abs)         00FA7
-_I2CTask                                  text65        03FF0
-_I2CWrite                                 text26        04E74
-_IEEESeqNum                               bssBANK1      0013A
+_I2CTask                                  text69        04CA0
+_I2CWrite                                 text30        05BD2
+_IEEESeqNum                               bssBANK1      00121
 _INTCON                                   (abs)         00FF2
 _INTCON2bits                              (abs)         00FF1
 _INTCON3bits                              (abs)         00FF0
 _INTCONbits                               (abs)         00FF2
-_InitMRF24J40                             text40        03246
-_InitSymbolTimer                          text7         04F2C
+_InitMRF24J40                             text44        04006
+_InitSymbolTimer                          text7         05C8A
 _LATA                                     (abs)         00F89
 _LATB                                     (abs)         00F8A
 _LATBbits                                 (abs)         00F8A
@@ -488,44 +506,43 @@ _LATCbits                                 (abs)         00F8B
 _LATD                                     (abs)         00F8C
 _LATDbits                                 (abs)         00F8C
 _LATE                                     (abs)         00F8D
-_LCDCommand                               bssBANK1      00122
-_LCDText                                  bssBANK2      002C0
-_LCD_Initialize                           text25        0473C
-_MACCurrentChannel                        bssBANK1      0013B
-_MACInitParams                            bssBANK1      0012E
+_LCDCommand                               bssBANK1      0010A
+_LCDText                                  bssBANK3      0038C
+_LCD_Initialize                           text29        053D8
+_MACCurrentChannel                        bssBANK1      00122
+_MACInitParams                            bssBANK1      00116
 _MACRxPacket                              bssCOMRAM     0002B
 _MAC_PANID                                bssCOMRAM     0004A
-_MRF24J40Status                           bssCOMRAM     00042
+_MRF24J40Status                           bssCOMRAM     00043
 _MTP                                      bssCOMRAM     00036
-_MiApp_BroadcastPacket                    text23        04840
-_MiApp_ConnectionMode                     text13        04DD2
-_MiApp_DiscardMessage                     text56        04F98
-_MiApp_EstablishConnection                text8         02BB2
-_MiApp_MessageAvailable                   text32        04F54
-_MiApp_ProtocolInit                       text5         0389E
-_MiApp_SearchConnection                   text11        034FA
-_MiApp_SetChannel                         text12        04E50
-_MiApp_StartConnection                    text4         047C0
-_MiApp_UnicastAddress                     text10        02770
-_MiMAC_DiscardPacket                      text57        04EAC
-_MiMAC_Init                               text6         04C2A
-_MiMAC_ReceivedPacket                     text48        0172C
-_MiMAC_SendPacket                         text38        01DFE
-_MiMAC_SetAltAddress                      text39        049A0
-_MiMAC_SetChannel                         text44        04B84
-_MiWiAckRequired                          bssBANK1      0013C
-_MiWiCapacityInfo                         bssBANK1      0013D
-_MiWiSeqNum                               bssCOMRAM     00043
+_MiApp_ConnectionMode                     text12        05B06
+_MiApp_DiscardMessage                     text60        05CF6
+_MiApp_EstablishConnection                text8         0369A
+_MiApp_MessageAvailable                   text36        05CC4
+_MiApp_ProtocolInit                       text5         0465E
+_MiApp_SearchConnection                   text10        042BA
+_MiApp_SetChannel                         text11        05BAE
+_MiApp_StartConnection                    text4         0545C
+_MiApp_UnicastAddress                     text27        03258
+_MiMAC_DiscardPacket                      text61        05C0A
+_MiMAC_Init                               text6         05928
+_MiMAC_ReceivedPacket                     text52        02214
+_MiMAC_SendPacket                         text42        028E6
+_MiMAC_SetAltAddress                      text43        0563C
+_MiMAC_SetChannel                         text48        05882
+_MiWiAckRequired                          bssBANK1      00123
+_MiWiCapacityInfo                         bssBANK1      00124
+_MiWiSeqNum                               bssCOMRAM     00044
 _MiWiStateMachine                         bssCOMRAM     0003D
-_MiWiTasks                                text33        001F6
-_MiWi_TickGet                             text51        04930
+_MiWiTasks                                text37        001F6
+_MiWi_TickGet                             text55        055CC
 _OSCCON                                   (abs)         00FD3
 _OSCTUNEbits                              (abs)         00F9B
-_OpenSocket                               text9         02F92
-_PHYGetLongRAMAddr                        text42        04A06
-_PHYGetShortRAMAddr                       text41        04D6A
-_PHYSetLongRAMAddr                        text46        04ACC
-_PHYSetShortRAMAddr                       text45        04DA0
+_OpenSocket                               text9         03D52
+_PHYGetLongRAMAddr                        text46        056A2
+_PHYGetShortRAMAddr                       text45        05A9E
+_PHYSetLongRAMAddr                        text50        057CA
+_PHYSetShortRAMAddr                       text49        05AD4
 _PIE1bits                                 (abs)         00F9D
 _PIE3bits                                 (abs)         00FA3
 _PIR1bits                                 (abs)         00F9E
@@ -538,15 +555,15 @@ _RCSTA2bits                               (abs)         00F9C
 _RPINR1                                   (abs)         00EE7
 _RPINR16                                  (abs)         00EF6
 _RPOR17                                   (abs)         00ED7
-_RX                                       text29        04CF8
-_RouteMessage                             text35        022B8
-_RouterFailures                           bssBANK1      0010A
-_RoutingTable                             bssBANK1      00112
-_RxBuffer                                 bssBANK2      00220
+_RX                                       text33        059F6
+_RouteMessage                             text39        02DA0
+_RouterFailures                           bssBANK2      00220
+_RoutingTable                             bssBANK2      00228
+_RxBuffer                                 bssBANK2      00238
 _SPBRG2                                   (abs)         00FAB
 _SPBRGH2                                  (abs)         00F7D
-_SPIGet                                   text43        04F72
-_SPIPut                                   text47        04E90
+_SPIGet                                   text47        05CE2
+_SPIPut                                   text51        05BEE
 _SSP1BUF                                  (abs)         00FC9
 _SSP1CON1                                 (abs)         00FC6
 _SSP1CON1bits                             (abs)         00FC6
@@ -558,12 +575,12 @@ _SSP2CON1bits                             (abs)         00F72
 _SSP2CON2                                 (abs)         00F71
 _SSP2CON2bits                             (abs)         00F71
 _SSP2STAT                                 (abs)         00F73
-_SYSTEM_Initialize                        text24        0447A
-_ScanTime                                 mediumconst   0FE71
-_SearchForLongAddress                     text55        03CEA
-_SearchForShortAddress                    text54        046B4
-_SendBeacon                               text36        03C04
-_SendMACPacket                            text37        04150
+_SYSTEM_Initialize                        text28        05086
+_ScanTime                                 mediumconst   0FE41
+_SearchForLongAddress                     text59        0499A
+_SearchForShortAddress                    text58        05350
+_SendBeacon                               text40        048B4
+_SendMACPacket                            text41        04DFA
 _T1CON                                    (abs)         00FCD
 _T1CONbits                                (abs)         00FCD
 _TMR0L                                    (abs)         00FD6
@@ -578,16 +595,16 @@ _TRISCbits                                (abs)         00F94
 _TRISD                                    (abs)         00F95
 _TRISDbits                                (abs)         00F95
 _TRISE                                    (abs)         00F96
-_TX                                       text19        039F2
+_TX                                       text21        03A9C
 _TXREG2                                   (abs)         00FA9
 _TXSTA2                                   (abs)         00FA8
 _TXSTA2bits                               (abs)         00FA8
-_TextLen                                  bssCOMRAM     00044
-_TextPtr                                  bssCOMRAM     00045
-_TxBuffer                                 bssBANK1      0019B
-_TxData                                   bssBANK0      000FC
-_UnicastShortAddress                      text34        0459A
-_UserInterruptHandler                     text64        04F14
+_TextLen                                  bssCOMRAM     00045
+_TextPtr                                  bssCOMRAM     00046
+_TxBuffer                                 bssBANK1      00183
+_TxData                                   bssBANK1      00125
+_UnicastShortAddress                      text38        05236
+_UserInterruptHandler                     text68        05C72
 _WDTCONbits                               (abs)         00FC0
 __CFG_CP0$OFF                             (abs)         00000
 __CFG_CPUDIV$OSC3_PLL3                    (abs)         00000
@@ -645,7 +662,6 @@ __Hconfig                                 config        10000
 __Hconst                                  const         00000
 __HcstackBANK0                            cstackBANK0   00000
 __HcstackBANK1                            cstackBANK1   00000
-__HcstackBANK2                            cstackBANK2   00000
 __HcstackCOMRAM                           cstackCOMRAM  00000
 __Hdata                                   data          00000
 __HdataBANK1                              dataBANK1     00000
@@ -686,7 +702,7 @@ __Hrparam                                 rparam        00000
 __Hsfr                                    sfr           00000
 __Hsmallconst                             smallconst    00000
 __Hspace_0                                (abs)         10000
-__Hspace_1                                (abs)         0038C
+__Hspace_1                                (abs)         003AD
 __Hspace_2                                (abs)         00000
 __Hstack                                  stack         00000
 __Hstruct                                 struct        00000
@@ -746,17 +762,21 @@ __Htext54                                 text54        00000
 __Htext55                                 text55        00000
 __Htext56                                 text56        00000
 __Htext57                                 text57        00000
+__Htext58                                 text58        00000
 __Htext59                                 text59        00000
 __Htext6                                  text6         00000
 __Htext60                                 text60        00000
 __Htext61                                 text61        00000
-__Htext62                                 text62        00000
 __Htext63                                 text63        00000
 __Htext64                                 text64        00000
 __Htext65                                 text65        00000
 __Htext66                                 text66        00000
 __Htext67                                 text67        00000
+__Htext68                                 text68        00000
+__Htext69                                 text69        00000
 __Htext7                                  text7         00000
+__Htext70                                 text70        00000
+__Htext71                                 text71        00000
 __Htext8                                  text8         00000
 __Htext9                                  text9         00000
 __LRAM                                    (abs)         00001
@@ -792,7 +812,6 @@ __Lconfig                                 config        0FFF8
 __Lconst                                  const         00000
 __LcstackBANK0                            cstackBANK0   00000
 __LcstackBANK1                            cstackBANK1   00000
-__LcstackBANK2                            cstackBANK2   00000
 __LcstackCOMRAM                           cstackCOMRAM  00000
 __Ldata                                   data          00000
 __LdataBANK1                              dataBANK1     00000
@@ -817,7 +836,7 @@ __Lintret                                 intret        00000
 __Lintsave_regs                           intsave_regs  00000
 __Lirdata                                 irdata        00000
 __Ljflash_buffer                          jflash_buffer 0F800
-__Lmediumconst                            mediumconst   0FE70
+__Lmediumconst                            mediumconst   0FE40
 __LnvFARRAM                               nvFARRAM      00000
 __Lnvbit                                  nvbit         00000
 __Lnvrram                                 nvrram        00000
@@ -893,209 +912,233 @@ __Ltext54                                 text54        00000
 __Ltext55                                 text55        00000
 __Ltext56                                 text56        00000
 __Ltext57                                 text57        00000
+__Ltext58                                 text58        00000
 __Ltext59                                 text59        00000
 __Ltext6                                  text6         00000
 __Ltext60                                 text60        00000
 __Ltext61                                 text61        00000
-__Ltext62                                 text62        00000
 __Ltext63                                 text63        00000
 __Ltext64                                 text64        00000
 __Ltext65                                 text65        00000
 __Ltext66                                 text66        00000
 __Ltext67                                 text67        00000
+__Ltext68                                 text68        00000
+__Ltext69                                 text69        00000
 __Ltext7                                  text7         00000
+__Ltext70                                 text70        00000
+__Ltext71                                 text71        00000
 __Ltext8                                  text8         00000
 __Ltext9                                  text9         00000
 __S0                                      (abs)         10000
-__S1                                      (abs)         0038C
+__S1                                      (abs)         003AD
 __S2                                      (abs)         00000
-___awdiv                                  text17        03E78
+___awdiv                                  text16        04B28
 ___awdiv@counter                          cstackBANK0   00064
 ___awdiv@dividend                         cstackBANK0   00060
 ___awdiv@divisor                          cstackBANK0   00062
 ___awdiv@quotient                         cstackBANK0   00066
 ___awdiv@sign                             cstackBANK0   00065
-___awmod                                  text16        041FA
+___awmod                                  text15        04EA4
 ___awmod@counter                          cstackBANK0   00064
 ___awmod@dividend                         cstackBANK0   00060
 ___awmod@divisor                          cstackBANK0   00062
 ___awmod@sign                             cstackBANK0   00065
 ___inthi_sp                               stack         00000
 ___intlo_sp                               stack         00000
-___lbmod                                  text50        04C74
+___lbmod                                  text54        05972
 ___lbmod@counter                          cstackBANK0   00062
 ___lbmod@dividend                         cstackBANK0   00061
 ___lbmod@divisor                          cstackBANK0   00060
 ___lbmod@rem                              cstackBANK0   00063
-___lmul                                   text28        048BA
+___lmul                                   text32        05556
 ___lmul@multiplicand                      cstackBANK0   00064
 ___lmul@multiplier                        cstackBANK0   00060
 ___lmul@product                           cstackBANK0   00068
+___lwdiv                                  text26        054DE
+___lwdiv@counter                          cstackBANK0   00064
+___lwdiv@dividend                         cstackBANK0   00060
+___lwdiv@divisor                          cstackBANK0   00062
+___lwdiv@quotient                         cstackBANK0   00065
+___lwmod                                  text25        05768
+___lwmod@counter                          cstackBANK0   0006B
+___lwmod@dividend                         cstackBANK0   00067
+___lwmod@divisor                          cstackBANK0   00069
 ___param_bank                             (abs)         00010
 ___rparam_used                            (abs)         00001
 ___sp                                     stack         00000
+___wmul                                   text24        05A68
+___wmul@multiplicand                      cstackBANK0   00062
+___wmul@multiplier                        cstackBANK0   00060
+___wmul@product                           cstackBANK0   00064
 __accesstop                               (abs)         00060
 __activetblptr                            (abs)         00002
-__end_of_AddNodeToNetworkTable            text52        03C04
-__end_of_BroadcastJitter                  text49        03FF0
-__end_of_DELAY_ms                         text27        04150
-__end_of_I2CTask                          text65        040A6
-__end_of_I2CWrite                         text26        04E90
-__end_of_InitMRF24J40                     text40        034FA
-__end_of_InitSymbolTimer                  text7         04F42
-__end_of_LCD_Initialize                   text25        047C0
-__end_of_MiApp_BroadcastPacket            text23        048BA
-__end_of_MiApp_ConnectionMode             text13        04DFE
-__end_of_MiApp_DiscardMessage             text56        04FA0
-__end_of_MiApp_EstablishConnection        text8         02F92
-__end_of_MiApp_MessageAvailable           text32        04F64
-__end_of_MiApp_ProtocolInit               text5         039F2
-__end_of_MiApp_SearchConnection           text11        0372E
-__end_of_MiApp_SetChannel                 text12        04E74
-__end_of_MiApp_StartConnection            text4         04840
-__end_of_MiApp_UnicastAddress             text10        02BB2
-__end_of_MiMAC_DiscardPacket              text57        04EC8
-__end_of_MiMAC_Init                       text6         04C74
-__end_of_MiMAC_ReceivedPacket             text48        01DFE
-__end_of_MiMAC_SendPacket                 text38        022B8
-__end_of_MiMAC_SetAltAddress              text39        04A06
-__end_of_MiMAC_SetChannel                 text44        04BD8
-__end_of_MiWiTasks                        text33        0172C
-__end_of_MiWi_TickGet                     text51        049A0
-__end_of_OpenSocket                       text9         03246
-__end_of_PHYGetLongRAMAddr                text42        04A6A
-__end_of_PHYGetShortRAMAddr               text41        04DA0
-__end_of_PHYSetLongRAMAddr                text46        04B2E
-__end_of_PHYSetShortRAMAddr               text45        04DD2
-__end_of_RX                               text29        04D34
-__end_of_RouteMessage                     text35        02770
-__end_of_SPIGet                           text43        04F7C
-__end_of_SPIPut                           text47        04EAC
-__end_of_SYSTEM_Initialize                text24        0450C
-__end_of_ScanTime                         mediumconst   0FEAD
-__end_of_SearchForLongAddress             text55        03DB6
-__end_of_SearchForShortAddress            text54        0473C
-__end_of_SendBeacon                       text36        03CEA
-__end_of_SendMACPacket                    text37        041FA
-__end_of_TX                               text19        03B02
-__end_of_UnicastShortAddress              text34        04628
-__end_of_UserInterruptHandler             text64        04F2C
-__end_of___awdiv                          text17        03F36
-__end_of___awmod                          text16        0429C
-__end_of___lbmod                          text50        04CB8
-__end_of___lmul                           text28        04930
-__end_of__initialization                  cinit         0446C
-__end_of__uartPrint                       text30        0459A
-__end_of_dpowers                          mediumconst   0FEC3
-__end_of_findNextNetworkEntry             text53        04CF8
-__end_of_getPseudo                        text20        03E78
-__end_of_hexpowers                        mediumconst   0FECB
+__end_of_AddNodeToNetworkTable            text56        048B4
+__end_of_BroadcastJitter                  text53        04CA0
+__end_of_DELAY_ms                         text31        04DFA
+__end_of_I2CTask                          text69        04D50
+__end_of_I2CWrite                         text30        05BEE
+__end_of_InitMRF24J40                     text44        042BA
+__end_of_InitSymbolTimer                  text7         05CA0
+__end_of_LCD_Initialize                   text29        0545C
+__end_of_MiApp_ConnectionMode             text12        05B32
+__end_of_MiApp_DiscardMessage             text60        05CFE
+__end_of_MiApp_EstablishConnection        text8         03A9C
+__end_of_MiApp_MessageAvailable           text36        05CD4
+__end_of_MiApp_ProtocolInit               text5         047B2
+__end_of_MiApp_SearchConnection           text10        044EE
+__end_of_MiApp_SetChannel                 text11        05BD2
+__end_of_MiApp_StartConnection            text4         054DE
+__end_of_MiApp_UnicastAddress             text27        0369A
+__end_of_MiMAC_DiscardPacket              text61        05C26
+__end_of_MiMAC_Init                       text6         05972
+__end_of_MiMAC_ReceivedPacket             text52        028E6
+__end_of_MiMAC_SendPacket                 text42        02DA0
+__end_of_MiMAC_SetAltAddress              text43        056A2
+__end_of_MiMAC_SetChannel                 text48        058D6
+__end_of_MiWiTasks                        text37        01738
+__end_of_MiWi_TickGet                     text55        0563C
+__end_of_OpenSocket                       text9         04006
+__end_of_PHYGetLongRAMAddr                text46        05706
+__end_of_PHYGetShortRAMAddr               text45        05AD4
+__end_of_PHYSetLongRAMAddr                text50        0582C
+__end_of_PHYSetShortRAMAddr               text49        05B06
+__end_of_RX                               text33        05A32
+__end_of_RouteMessage                     text39        03258
+__end_of_SPIGet                           text47        05CEC
+__end_of_SPIPut                           text51        05C0A
+__end_of_SYSTEM_Initialize                text28        05118
+__end_of_ScanTime                         mediumconst   0FE7D
+__end_of_SearchForLongAddress             text59        04A66
+__end_of_SearchForShortAddress            text58        053D8
+__end_of_SendBeacon                       text40        0499A
+__end_of_SendMACPacket                    text41        04EA4
+__end_of_TX                               text21        03D52
+__end_of_UnicastShortAddress              text38        052C4
+__end_of_UserInterruptHandler             text68        05C8A
+__end_of___awdiv                          text16        04BE6
+__end_of___awmod                          text15        04F46
+__end_of___lbmod                          text54        059B6
+__end_of___lmul                           text32        055CC
+__end_of___lwdiv                          text26        05556
+__end_of___lwmod                          text25        057CA
+__end_of___wmul                           text24        05A9E
+__end_of__initialization                  cinit         0519A
+__end_of__uartPrint                       text34        05236
+__end_of_dpowers                          mediumconst   0FE93
+__end_of_findNextNetworkEntry             text57        059F6
+__end_of_getPseudo                        text18        04B28
+__end_of_hexpowers                        mediumconst   0FE9B
 __end_of_high_isr                         intcode       001F2
-__end_of_initChat                         text14        04ACC
-__end_of_initNwk                          text2         0389E
-__end_of_main                             text0         04EE2
-__end_of_octpowers                        mediumconst   0FEB9
-__end_of_uartHexaPrint                    text3         0433C
-__end_of_uartInitialize                   text1         04F14
-__end_of_uartRead                         text21        04D6A
-__end_of_uartWrite                        text31        04F72
-__end_of_vT100ClearScreen                 text18        04F54
-__end_of_vT100EraseEndOfLine              text22        04FA4
-__end_of_vT100SetCursorPos                text15        043DC
-__end_ofi2_DELAY_ms                       text66        046B4
-__end_ofi2_PHYGetLongRAMAddr              text61        04C2A
-__end_ofi2_PHYGetShortRAMAddr             text60        04E28
-__end_ofi2_PHYSetShortRAMAddr             text59        04E50
-__end_ofi2_SPIGet                         text62        04F86
-__end_ofi2_SPIPut                         text63        04EFC
-__end_ofi2___lmul                         text67        04B84
-__initialization                          cinit         043DC
-__mediumconst                             mediumconst   0FE70
+__end_of_initChat                         text13        05768
+__end_of_initNwk                          text2         0465E
+__end_of_isdigit                          text23        05B5C
+__end_of_main                             text0         05C40
+__end_of_octpowers                        mediumconst   0FE89
+__end_of_sprintf                          text22        02214
+__end_of_uartHexaPrint                    text3         04FE6
+__end_of_uartInitialize                   text1         05C72
+__end_of_uartRead                         text19        05A68
+__end_of_uartWrite                        text35        05CE2
+__end_of_vT100ClearScreen                 text17        05CB2
+__end_of_vT100EraseEndOfLine              text20        05D02
+__end_of_vT100SetCursorPos                text14        05086
+__end_ofi2_DELAY_ms                       text70        05350
+__end_ofi2_PHYGetLongRAMAddr              text65        05928
+__end_ofi2_PHYGetShortRAMAddr             text64        05B86
+__end_ofi2_PHYSetShortRAMAddr             text63        05BAE
+__end_ofi2_SPIGet                         text66        05CF6
+__end_ofi2_SPIPut                         text67        05C5A
+__end_ofi2___lmul                         text71        05882
+__initialization                          cinit         05118
+__mediumconst                             mediumconst   0FE40
 __pbssBANK0                               bssBANK0      000FC
 __pbssBANK1                               bssBANK1      00100
 __pbssBANK2                               bssBANK2      00200
 __pbssBANK3                               bssBANK3      00300
 __pbssCOMRAM                              bssCOMRAM     0002B
-__pcinit                                  cinit         043DC
+__pcinit                                  cinit         05118
 __pcstackBANK0                            cstackBANK0   00060
-__pcstackBANK1                            cstackBANK1   001EA
-__pcstackBANK2                            cstackBANK2   002EA
+__pcstackBANK1                            cstackBANK1   001D2
 __pcstackCOMRAM                           cstackCOMRAM  00001
-__pdataBANK1                              dataBANK1     001F5
-__pdataBANK2                              dataBANK2     002F4
+__pdataBANK1                              dataBANK1     001FA
+__pdataBANK2                              dataBANK2     002E1
 __pdataCOMRAM                             dataCOMRAM    00053
-__pidataBANK1                             idataBANK1    04F86
-__pidataBANK2                             idataBANK2    04F8F
-__pidataCOMRAM                            idataCOMRAM   04FA0
+__pidataBANK1                             idataBANK1    05D02
+__pidataBANK2                             idataBANK2    05CB2
+__pidataCOMRAM                            idataCOMRAM   05CFE
 __pintcode                                intcode       00008
-__pmediumconst                            mediumconst   0FE70
-__ptext0                                  text0         04EC8
-__ptext1                                  text1         04EFC
-__ptext10                                 text10        02770
-__ptext11                                 text11        034FA
-__ptext12                                 text12        04E50
-__ptext13                                 text13        04DD2
-__ptext14                                 text14        04A6A
-__ptext15                                 text15        0433C
-__ptext16                                 text16        041FA
-__ptext17                                 text17        03E78
-__ptext18                                 text18        04F42
-__ptext19                                 text19        039F2
-__ptext2                                  text2         0372E
-__ptext20                                 text20        03DB6
-__ptext21                                 text21        04D34
-__ptext22                                 text22        04FA2
-__ptext23                                 text23        04840
-__ptext24                                 text24        0447A
-__ptext25                                 text25        0473C
-__ptext26                                 text26        04E74
-__ptext27                                 text27        040A6
-__ptext28                                 text28        048BA
-__ptext29                                 text29        04CF8
-__ptext3                                  text3         0429C
-__ptext30                                 text30        0450C
-__ptext31                                 text31        04F64
-__ptext32                                 text32        04F54
-__ptext33                                 text33        001F6
-__ptext34                                 text34        0459A
-__ptext35                                 text35        022B8
-__ptext36                                 text36        03C04
-__ptext37                                 text37        04150
-__ptext38                                 text38        01DFE
-__ptext39                                 text39        049A0
-__ptext4                                  text4         047C0
-__ptext40                                 text40        03246
-__ptext41                                 text41        04D6A
-__ptext42                                 text42        04A06
-__ptext43                                 text43        04F72
-__ptext44                                 text44        04B84
-__ptext45                                 text45        04DA0
-__ptext46                                 text46        04ACC
-__ptext47                                 text47        04E90
-__ptext48                                 text48        0172C
-__ptext49                                 text49        03F36
-__ptext5                                  text5         0389E
-__ptext50                                 text50        04C74
-__ptext51                                 text51        04930
-__ptext52                                 text52        03B02
-__ptext53                                 text53        04CB8
-__ptext54                                 text54        046B4
-__ptext55                                 text55        03CEA
-__ptext56                                 text56        04F98
-__ptext57                                 text57        04EAC
-__ptext59                                 text59        04E28
-__ptext6                                  text6         04C2A
-__ptext60                                 text60        04DFE
-__ptext61                                 text61        04BD8
-__ptext62                                 text62        04F7C
-__ptext63                                 text63        04EE2
-__ptext64                                 text64        04F14
-__ptext65                                 text65        03FF0
-__ptext66                                 text66        04628
-__ptext67                                 text67        04B2E
-__ptext7                                  text7         04F2C
-__ptext8                                  text8         02BB2
-__ptext9                                  text9         02F92
+__pmediumconst                            mediumconst   0FE40
+__ptext0                                  text0         05C26
+__ptext1                                  text1         05C5A
+__ptext10                                 text10        042BA
+__ptext11                                 text11        05BAE
+__ptext12                                 text12        05B06
+__ptext13                                 text13        05706
+__ptext14                                 text14        04FE6
+__ptext15                                 text15        04EA4
+__ptext16                                 text16        04B28
+__ptext17                                 text17        05CA0
+__ptext18                                 text18        04A66
+__ptext19                                 text19        05A32
+__ptext2                                  text2         044EE
+__ptext20                                 text20        05D00
+__ptext21                                 text21        03A9C
+__ptext22                                 text22        01738
+__ptext23                                 text23        05B32
+__ptext24                                 text24        05A68
+__ptext25                                 text25        05768
+__ptext26                                 text26        054DE
+__ptext27                                 text27        03258
+__ptext28                                 text28        05086
+__ptext29                                 text29        053D8
+__ptext3                                  text3         04F46
+__ptext30                                 text30        05BD2
+__ptext31                                 text31        04D50
+__ptext32                                 text32        05556
+__ptext33                                 text33        059F6
+__ptext34                                 text34        051A8
+__ptext35                                 text35        05CD4
+__ptext36                                 text36        05CC4
+__ptext37                                 text37        001F6
+__ptext38                                 text38        05236
+__ptext39                                 text39        02DA0
+__ptext4                                  text4         0545C
+__ptext40                                 text40        048B4
+__ptext41                                 text41        04DFA
+__ptext42                                 text42        028E6
+__ptext43                                 text43        0563C
+__ptext44                                 text44        04006
+__ptext45                                 text45        05A9E
+__ptext46                                 text46        056A2
+__ptext47                                 text47        05CE2
+__ptext48                                 text48        05882
+__ptext49                                 text49        05AD4
+__ptext5                                  text5         0465E
+__ptext50                                 text50        057CA
+__ptext51                                 text51        05BEE
+__ptext52                                 text52        02214
+__ptext53                                 text53        04BE6
+__ptext54                                 text54        05972
+__ptext55                                 text55        055CC
+__ptext56                                 text56        047B2
+__ptext57                                 text57        059B6
+__ptext58                                 text58        05350
+__ptext59                                 text59        0499A
+__ptext6                                  text6         05928
+__ptext60                                 text60        05CF6
+__ptext61                                 text61        05C0A
+__ptext63                                 text63        05B86
+__ptext64                                 text64        05B5C
+__ptext65                                 text65        058D6
+__ptext66                                 text66        05CEC
+__ptext67                                 text67        05C40
+__ptext68                                 text68        05C72
+__ptext69                                 text69        04CA0
+__ptext7                                  text7         05C8A
+__ptext70                                 text70        052C4
+__ptext71                                 text71        0582C
+__ptext8                                  text8         0369A
+__ptext9                                  text9         03D52
 __ramtop                                  ramtop        00F00
 __size_of_AddNodeToNetworkTable           (abs)         00000
 __size_of_BroadcastJitter                 (abs)         00000
@@ -1105,7 +1148,6 @@ __size_of_I2CWrite                        (abs)         00000
 __size_of_InitMRF24J40                    (abs)         00000
 __size_of_InitSymbolTimer                 (abs)         00000
 __size_of_LCD_Initialize                  (abs)         00000
-__size_of_MiApp_BroadcastPacket           (abs)         00000
 __size_of_MiApp_ConnectionMode            (abs)         00000
 __size_of_MiApp_DiscardMessage            (abs)         00000
 __size_of_MiApp_EstablishConnection       (abs)         00000
@@ -1144,13 +1186,18 @@ __size_of___awdiv                         (abs)         00000
 __size_of___awmod                         (abs)         00000
 __size_of___lbmod                         (abs)         00000
 __size_of___lmul                          (abs)         00000
+__size_of___lwdiv                         (abs)         00000
+__size_of___lwmod                         (abs)         00000
+__size_of___wmul                          (abs)         00000
 __size_of__uartPrint                      (abs)         00000
 __size_of_findNextNetworkEntry            (abs)         00000
 __size_of_getPseudo                       (abs)         00000
 __size_of_high_isr                        (abs)         00000
 __size_of_initChat                        (abs)         00000
 __size_of_initNwk                         (abs)         00000
+__size_of_isdigit                         (abs)         00000
 __size_of_main                            (abs)         00000
+__size_of_sprintf                         (abs)         00000
 __size_of_uartHexaPrint                   (abs)         00000
 __size_of_uartInitialize                  (abs)         00000
 __size_of_uartRead                        (abs)         00000
@@ -1166,50 +1213,56 @@ __size_ofi2_SPIGet                        (abs)         00000
 __size_ofi2_SPIPut                        (abs)         00000
 __size_ofi2___lmul                        (abs)         00000
 __smallconst                              smallconst    00000
-__uartPrint                               text30        0450C
+__uartPrint                               text34        051A8
 __uartPrint@i                             cstackBANK0   00065
 __uartPrint@str                           cstackBANK0   00061
 _currentChannel                           bssCOMRAM     00052
 _defaultHops                              dataCOMRAM    00054
-_detect                                   bssBANK1      00133
-_dpowers                                  mediumconst   0FEB9
-_failureCounter                           bssBANK1      00135
-_findNextNetworkEntry                     text53        04CB8
-_getPseudo                                text20        03DB6
-_hexpowers                                mediumconst   0FEC3
+_detect                                   bssBANK1      0011B
+_dpowers                                  mediumconst   0FE89
+_failureCounter                           bssBANK1      0011D
+_findNextNetworkEntry                     text57        059B6
+_getPseudo                                text18        04A66
+_hexpowers                                mediumconst   0FE93
 _high_isr                                 intcode       00008
-_initChat                                 text14        04A6A
-_initNwk                                  text2         0372E
-_knownCoordinators                        bssBANK1      0013E
-_main                                     text0         04EC8
-_myLongAddress                            dataBANK1     001F6
+_initChat                                 text13        05706
+_initNwk                                  text2         044EE
+_isdigit                                  text23        05B32
+_isdigit$3722                             cstackBANK0   00061
+_knownCoordinators                        bssBANK1      00126
+_main                                     text0         05C26
+_myLongAddress                            dataBANK2     002EA
 _myNetworkAddress                         bssCOMRAM     0004C
 _myPANID                                  bssBANK0      000FD
-_myParent                                 bssCOMRAM     00046
-_myPseudo                                 bssBANK2      002E1
+_myParent                                 bssBANK0      000FC
+_myPseudo                                 bssBANK2      002D8
 _myShortAddress                           bssCOMRAM     0004E
-_num                                      bssBANK1      00137
-_octpowers                                mediumconst   0FEAD
-_openSocketInfo                           bssBANK1      001CE
+_num                                      bssBANK1      0011F
+_octpowers                                mediumconst   0FE7D
+_openSocketInfo                           bssBANK1      001B6
 _role                                     bssCOMRAM     00047
 _rxMessage                                bssBANK1      00100
-_switch0PressTime                         bssBANK1      00126
-_switch1PressTime                         bssBANK1      0012A
-_tempLongAddress                          bssBANK1      0011A
+_sprintf                                  text22        01738
+_sprintf$3501                             cstackBANK0   0007B
+_sprintf$3502                             cstackBANK0   0007D
+_sprintf$3508                             cstackBANK0   0007F
+_switch0PressTime                         bssBANK1      0010E
+_switch1PressTime                         bssBANK1      00112
+_tempLongAddress                          bssBANK2      00230
 _tempNodeStatus                           bssCOMRAM     00048
-_tempPANID                                bssBANK1      001E8
+_tempPANID                                bssBANK1      001D0
 _tempShortAddress                         bssCOMRAM     00050
 _timerExtension1                          bssCOMRAM     00049
-_timerExtension2                          bssBANK1      0013F
-_uartHexaPrint                            text3         0429C
-_uartInitialize                           text1         04EFC
-_uartRead                                 text21        04D34
-_uartWrite                                text31        04F64
-_vT100ClearScreen                         text18        04F42
-_vT100EraseEndOfLine                      text22        04FA2
-_vT100SetCursorPos                        text15        0433C
+_timerExtension2                          bssBANK1      00127
+_uartHexaPrint                            text3         04F46
+_uartInitialize                           text1         05C5A
+_uartRead                                 text19        05A32
+_uartWrite                                text35        05CD4
+_vT100ClearScreen                         text17        05CA0
+_vT100EraseEndOfLine                      text20        05D00
+_vT100SetCursorPos                        text14        04FE6
 btemp                                     temp          00055
-end_of_initialization                     cinit         0446C
+end_of_initialization                     cinit         0519A
 findNextNetworkEntry@i                    cstackBANK0   00060
 getPseudo@i                               cstackBANK0   00069
 getPseudo@pseudo                          cstackBANK0   00062
@@ -1230,28 +1283,40 @@ i2PHYSetShortRAMAddr@tmpRFIE              cstackCOMRAM  00005
 i2PHYSetShortRAMAddr@value                cstackCOMRAM  00003
 i2SPIPut@i                                cstackCOMRAM  00001
 i2SPIPut@v                                cstackCOMRAM  00002
-i2_DELAY_ms                               text66        04628
-i2_PHYGetLongRAMAddr                      text61        04BD8
-i2_PHYGetShortRAMAddr                     text60        04DFE
-i2_PHYSetShortRAMAddr                     text59        04E28
-i2_SPIGet                                 text62        04F7C
-i2_SPIPut                                 text63        04EE2
-i2___lmul                                 text67        04B2E
+i2_DELAY_ms                               text70        052C4
+i2_PHYGetLongRAMAddr                      text65        058D6
+i2_PHYGetShortRAMAddr                     text64        05B5C
+i2_PHYSetShortRAMAddr                     text63        05B86
+i2_SPIGet                                 text66        05CEC
+i2_SPIPut                                 text67        05C40
+i2___lmul                                 text71        0582C
 i2___lmul@multiplicand                    cstackCOMRAM  00005
 i2___lmul@multiplier                      cstackCOMRAM  00001
 i2___lmul@product                         cstackCOMRAM  00009
-initNwk@found                             cstackBANK1   001F2
-initNwk@index                             cstackBANK1   001F4
-initNwk@respondingDevices                 cstackBANK1   001F3
+initNwk@found                             cstackBANK1   001E4
+initNwk@index                             cstackBANK1   001E6
+initNwk@respondingDevices                 cstackBANK1   001E5
 int$flags                                 temp          00055
 intlevel0                                 text          00000
 intlevel1                                 text          00000
 intlevel2                                 text          00000
 intlevel3                                 text          00000
+isdigit@c                                 cstackBANK0   00062
+sprintf@ap                                cstackBANK0   00085
+sprintf@c                                 cstackBANK0   0008C
+sprintf@cp                                cstackBANK0   00081
+sprintf@f                                 cstackBANK0   0006E
+sprintf@flag                              cstackBANK0   0008D
+sprintf@idx                               cstackBANK0   0007A
+sprintf@len                               cstackBANK0   00083
+sprintf@prec                              cstackBANK0   00089
+sprintf@sp                                cstackBANK0   0006C
+sprintf@val                               cstackBANK0   00087
+sprintf@width                             cstackBANK0   0008A
 stackhi                                   (abs)         00EBF
-stacklo                                   (abs)         0038C
+stacklo                                   (abs)         003AD
 start                                     init          001F2
-start_initialization                      cinit         043DC
+start_initialization                      cinit         05118
 uartHexaPrint@i                           cstackBANK0   00065
 uartHexaPrint@n                           cstackBANK0   00063
 uartHexaPrint@v                           cstackBANK0   00067
@@ -1259,7 +1324,7 @@ uartHexaPrint@val                         cstackBANK0   00061
 uartRead@val                              cstackBANK0   00061
 uartWrite@c                               cstackBANK0   00060
 vT100SetCursorPos@Cmd                     cstackBANK0   00069
-vT100SetCursorPos@F8080                   dataBANK2     002F4
+vT100SetCursorPos@F8080                   dataBANK2     002E1
 vT100SetCursorPos@c                       cstackBANK0   00068
 vT100SetCursorPos@r                       cstackBANK0   00072
 
@@ -1336,9 +1401,9 @@ Total ram usage:        0 bytes
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
-  index           1   10[BANK1 ] unsigned char 
-  respondingDe    1    9[BANK1 ] unsigned char 
-  found           1    8[BANK1 ] unsigned char 
+  index           1   20[BANK1 ] unsigned char 
+  respondingDe    1   19[BANK1 ] unsigned char 
+  found           1   18[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      void 
  Registers used:
@@ -1536,10 +1601,10 @@ Total ram usage:        0 bytes
   ActiveScanIn    1    wreg     unsigned char 
   Mode            1  153[BANK0 ] unsigned char 
  Auto vars:     Size  Location     Type
-  ActiveScanIn    1    9[BANK2 ] unsigned char 
-  t2              4    4[BANK2 ] struct _MIWI_TICK
-  t1              4    0[BANK2 ] struct _MIWI_TICK
-  retry           1    8[BANK2 ] unsigned char 
+  ActiveScanIn    1   17[BANK1 ] unsigned char 
+  t2              4   12[BANK1 ] struct _MIWI_TICK
+  t1              4    8[BANK1 ] struct _MIWI_TICK
+  retry           1   16[BANK1 ] unsigned char 
   i               1    0        unsigned char 
  Return value:  Size  Location     Type
                   1    wreg      unsigned char 
@@ -1551,9 +1616,9 @@ Total ram usage:        0 bytes
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       0       0      10       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       0      10       0       0       0       0       0       0       0       0       0       0       0       0       0
       Temps:          0       0       8       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       8      10       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       1      18       0       0       0       0       0       0       0       0       0       0       0       0       0
 Total ram usage:       19 bytes
  Hardware stack levels used:    1
  Hardware stack levels required when called:   18
@@ -1603,50 +1668,6 @@ Total ram usage:        1 bytes
 		_SearchForShortAddress
  This function is called by:
 		_MiApp_EstablishConnection
- This function uses a non-reentrant model
-
-
- *************** function _MiApp_UnicastAddress *****************
- Defined at:
-		line 4526 in file "../../MLA/framework/miwi/src/miwi_mesh.c"
- Parameters:    Size  Location     Type
-  DestAddress     2  121[BANK0 ] PTR unsigned char 
-		 -> tempShortAddress(2), openSocketInfo.ShortAddress1(2), openSocketInfo(26), 
-  PermanentAdd    1  123[BANK0 ] unsigned char 
-  SecEn           1  124[BANK0 ] unsigned char 
- Auto vars:     Size  Location     Type
-  t2              4  137[BANK0 ] struct _MIWI_TICK
-  t1              4  133[BANK0 ] struct _MIWI_TICK
-  t2              4  145[BANK0 ] struct _MIWI_TICK
-  t1              4  141[BANK0 ] struct _MIWI_TICK
-  handle          1  151[BANK0 ] unsigned char 
-  i               1  150[BANK0 ] unsigned char 
-  MiWiFrameCon    1  149[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0      19       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0      31       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:       31 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:   16
- This function calls:
-		_MiApp_DiscardMessage
-		_MiApp_MessageAvailable
-		_MiMAC_SendPacket
-		_MiWi_TickGet
-		_RouteMessage
-		_SearchForLongAddress
- This function is called by:
-		_OpenSocket
  This function uses a non-reentrant model
 
 
@@ -1918,47 +1939,12 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _TX *****************
- Defined at:
-		line 251 in file "../firmware/src/main.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  pointeur        2   67[BANK0 ] PTR unsigned char 
-		 -> RAM(3775), 
-  i               2   65[BANK0 ] int 
-  myMessage       1   64[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
-      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        7 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:   11
- This function calls:
-		_MiApp_BroadcastPacket
-		__uartPrint
-		_getPseudo
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
  *************** function _getPseudo *****************
  Defined at:
 		line 224 in file "../firmware/src/main.c"
  Parameters:    Size  Location     Type
   pseudo          2    2[BANK0 ] PTR unsigned char 
-		 -> RAM(3775), myPseudo(9), 
+		 -> myPseudo(9), 
  Auto vars:     Size  Location     Type
   i               2    9[BANK0 ] int 
  Return value:  Size  Location     Type
@@ -1981,7 +1967,6 @@ Total ram usage:        9 bytes
 		_uartRead
  This function is called by:
 		_initChat
-		_TX
  This function uses a non-reentrant model
 
 
@@ -2046,33 +2031,262 @@ Total ram usage:        0 bytes
  This function uses a non-reentrant model
 
 
- *************** function _MiApp_BroadcastPacket *****************
+ *************** function _TX *****************
  Defined at:
-		line 4243 in file "../../MLA/framework/miwi/src/miwi_mesh.c"
+		line 251 in file "../firmware/src/main.c"
  Parameters:    Size  Location     Type
-  SecEn           1    wreg     unsigned char 
+		None
  Auto vars:     Size  Location     Type
-  SecEn           1   61[BANK0 ] unsigned char 
+  myMessage      30    0[BANK1 ] unsigned char [30]
+  i               2   36[BANK1 ] int 
+  my_adr          2   34[BANK1 ] int 
+  pt_user2        2   32[BANK1 ] PTR unsigned char 
+		 -> TX@adr2(1), 
+  pt_user1        2   30[BANK1 ] PTR unsigned char 
+		 -> TX@adr1(1), 
+  adr2            1   39[BANK1 ] unsigned char 
+  adr1            1   38[BANK1 ] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      unsigned char 
+                  1    wreg      void 
  Registers used:
-		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
 		On entry : 
 		On exit  : 
 		Unchanged: 
  Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
       Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-      Totals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
-Total ram usage:        1 bytes
+      Locals:         0       0      40       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       2      40       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       42 bytes
  Hardware stack levels used:    1
- Hardware stack levels required when called:   10
+ Hardware stack levels required when called:   17
  This function calls:
-		_MiMAC_SendPacket
+		_MiApp_UnicastAddress
+		__uartPrint
+		_sprintf
+ This function is called by:
+		_main
+ This function uses a non-reentrant model
+
+
+ *************** function _sprintf *****************
+ Defined at:
+		line 492 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c"
+ Parameters:    Size  Location     Type
+  sp              2   12[BANK0 ] PTR unsigned char 
+		 -> TX@myMessage(30), LCDText(33), 
+  f               2   14[BANK0 ] PTR const unsigned char 
+		 -> STR_17(41), STR_15(41), STR_2(17), STR_1(17), 
+ Auto vars:     Size  Location     Type
+  idx             1   26[BANK0 ] unsigned char 
+  tmpval          4    0        struct .
+  flag            2   45[BANK0 ] unsigned short 
+  width           2   42[BANK0 ] int 
+  val             2   39[BANK0 ] unsigned int 
+  ap              2   37[BANK0 ] PTR void [1]
+		 -> ?_sprintf(2), 
+  len             2   35[BANK0 ] unsigned int 
+  cp              2   33[BANK0 ] PTR const unsigned char 
+		 -> STR_20(7), sprintf@c(1), myPseudo(9), 
+  c               1   44[BANK0 ] char 
+  prec            1   41[BANK0 ] char 
+ Return value:  Size  Location     Type
+                  2   12[BANK0 ] int 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0      10       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      21       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      35       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       35 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    6
+ This function calls:
+		___lwdiv
+		___lwmod
+		___wmul
+		_isdigit
  This function is called by:
 		_TX
+		_LCDTRXCount
+		_LCDDisplay
+ This function uses a non-reentrant model
+
+
+ *************** function _isdigit *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\isdigit.c"
+ Parameters:    Size  Location     Type
+  c               1    wreg     unsigned char 
+ Auto vars:     Size  Location     Type
+  c               1    2[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+		None               void
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        3 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_sprintf
+ This function uses a non-reentrant model
+
+
+ *************** function ___wmul *****************
+ Defined at:
+		line 15 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c"
+ Parameters:    Size  Location     Type
+  multiplier      2    0[BANK0 ] unsigned int 
+  multiplicand    2    2[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  product         2    4[BANK0 ] unsigned int 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] unsigned int 
+ Registers used:
+		wreg, status,2, status,0, prodl, prodh
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       2       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       6       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        6 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_sprintf
+ This function uses a non-reentrant model
+
+
+ *************** function ___lwmod *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c"
+ Parameters:    Size  Location     Type
+  dividend        2    7[BANK0 ] unsigned int 
+  divisor         2    9[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  counter         1   11[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    7[BANK0 ] unsigned int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       1       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       5       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        5 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_sprintf
+ This function uses a non-reentrant model
+
+
+ *************** function ___lwdiv *****************
+ Defined at:
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c"
+ Parameters:    Size  Location     Type
+  dividend        2    0[BANK0 ] unsigned int 
+  divisor         2    2[BANK0 ] unsigned int 
+ Auto vars:     Size  Location     Type
+  quotient        2    5[BANK0 ] unsigned int 
+  counter         1    4[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2    0[BANK0 ] unsigned int 
+ Registers used:
+		wreg, status,2, status,0
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0       3       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0       7       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:        7 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		Nothing
+ This function is called by:
+		_sprintf
+ This function uses a non-reentrant model
+
+
+ *************** function _MiApp_UnicastAddress *****************
+ Defined at:
+		line 4526 in file "../../MLA/framework/miwi/src/miwi_mesh.c"
+ Parameters:    Size  Location     Type
+  DestAddress     2  121[BANK0 ] PTR unsigned char 
+		 -> tempShortAddress(2), openSocketInfo.ShortAddress1(2), openSocketInfo(26), TX@adr2(1), 
+		 -> TX@adr1(1), 
+  PermanentAdd    1  123[BANK0 ] unsigned char 
+  SecEn           1  124[BANK0 ] unsigned char 
+ Auto vars:     Size  Location     Type
+  t2              4  137[BANK0 ] struct _MIWI_TICK
+  t1              4  133[BANK0 ] struct _MIWI_TICK
+  t2              4  145[BANK0 ] struct _MIWI_TICK
+  t1              4  141[BANK0 ] struct _MIWI_TICK
+  handle          1  151[BANK0 ] unsigned char 
+  i               1  150[BANK0 ] unsigned char 
+  MiWiFrameCon    1  149[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  1    wreg      unsigned char 
+ Registers used:
+		wreg, fsr0l, fsr0h, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7   BANK8   BANK9  BANK10  BANK11  BANK12  BANK13  BANK14
+      Params:         0       4       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Locals:         0      19       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Temps:          0       8       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+      Totals:         0      31       0       0       0       0       0       0       0       0       0       0       0       0       0       0
+Total ram usage:       31 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:   16
+ This function calls:
+		_MiApp_DiscardMessage
+		_MiApp_MessageAvailable
+		_MiMAC_SendPacket
+		_MiWi_TickGet
+		_RouteMessage
+		_SearchForLongAddress
+ This function is called by:
+		_TX
+		_OpenSocket
  This function uses a non-reentrant model
 
 
@@ -2273,11 +2487,11 @@ Total ram usage:        0 bytes
 		line 77 in file "../firmware/src/VT100.c"
  Parameters:    Size  Location     Type
   str             2    1[BANK0 ] PTR unsigned char 
-		 -> RxBuffer.Payload(79), RxBuffer(160), vT100SetCursorPos@Cmd(9), STR_16(5), 
-		 -> STR_15(3), RAM(3775), STR_14(3), STR_13(13), 
-		 -> STR_12(3), STR_11(23), STR_10(28), STR_9(26), 
-		 -> STR_8(37), STR_7(27), STR_6(28), STR_5(4), 
-		 -> STR_4(14), myPseudo(9), STR_3(26), 
+		 -> RxBuffer.Payload(79), RxBuffer(160), vT100SetCursorPos@Cmd(9), STR_19(5), 
+		 -> STR_18(3), STR_16(3), TX@myMessage(30), STR_14(3), 
+		 -> STR_13(13), STR_12(3), STR_11(23), STR_10(28), 
+		 -> STR_9(26), STR_8(37), STR_7(27), STR_6(28), 
+		 -> STR_5(4), STR_4(14), myPseudo(9), STR_3(26), 
  Auto vars:     Size  Location     Type
   i               2    5[BANK0 ] int 
  Return value:  Size  Location     Type
@@ -2617,8 +2831,8 @@ Total ram usage:       31 bytes
 		_MiWiTasks
 		_RouteMessage
 		_SendMACPacket
-		_MiApp_BroadcastPacket
 		_MiApp_UnicastAddress
+		_MiApp_BroadcastPacket
 		_MiApp_RemoveConnection
  This function uses a non-reentrant model
 
@@ -3592,132 +3806,156 @@ Total ram usage:       12 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c
+		___lwmod       		CODE           	5768	0000	99
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwmod.c estimated size: 99
+
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awmod.c
-		___awmod       		CODE           	41FA	0000	163
+		___awmod       		CODE           	4EA4	0000	163
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awmod.c estimated size: 163
 
 ../../MLA/framework/miwi/src/miwi_mesh.c
-		_UnicastShortAddress		CODE           	459A	0000	143
-		_MiApp_EstablishConnection		CODE           	2BB2	0000	993
-		_MiApp_ProtocolInit		CODE           	389E	0000	341
-		_MiApp_UnicastAddress		CODE           	2770	0000	1091
-		_MiApp_StartConnection		CODE           	47C0	0000	129
-		_SendMACPacket 		CODE           	4150	0000	171
-		_SendBeacon    		CODE           	3C04	0000	231
-		_SearchForLongAddress		CODE           	3CEA	0000	205
-		_MiApp_BroadcastPacket		CODE           	4840	0000	123
-		_findNextNetworkEntry		CODE           	4CB8	0000	65
-		_SearchForShortAddress		CODE           	46B4	0000	137
-		_OpenSocket    		CODE           	2F92	0000	693
-		_RouteMessage  		CODE           	22B8	0000	1209
-		_MiApp_SetChannel		CODE           	4E50	0000	37
-		_MiWiTasks     		CODE           	01F6	0000	5431
-		_MiApp_DiscardMessage		CODE           	4F98	0000	9
-		_BroadcastJitter		CODE           	3F36	0000	187
-		_MiApp_MessageAvailable		CODE           	4F54	0000	17
-		_MiApp_SearchConnection		CODE           	34FA	0000	565
-		_AddNodeToNetworkTable		CODE           	3B02	0000	259
-		_MiApp_ConnectionMode		CODE           	4DD2	0000	45
+		_UnicastShortAddress		CODE           	5236	0000	143
+		_MiApp_EstablishConnection		CODE           	369A	0000	1027
+		_MiApp_ProtocolInit		CODE           	465E	0000	341
+		_MiApp_UnicastAddress		CODE           	3258	0000	1091
+		_MiApp_StartConnection		CODE           	545C	0000	131
+		_SendMACPacket 		CODE           	4DFA	0000	171
+		_SendBeacon    		CODE           	48B4	0000	231
+		_SearchForLongAddress		CODE           	499A	0000	205
+		_findNextNetworkEntry		CODE           	59B6	0000	65
+		_SearchForShortAddress		CODE           	5350	0000	137
+		_OpenSocket    		CODE           	3D52	0000	693
+		_RouteMessage  		CODE           	2DA0	0000	1209
+		_MiApp_SetChannel		CODE           	5BAE	0000	37
+		_MiWiTasks     		CODE           	01F6	0000	5443
+		_MiApp_DiscardMessage		CODE           	5CF6	0000	9
+		_BroadcastJitter		CODE           	4BE6	0000	187
+		_MiApp_MessageAvailable		CODE           	5CC4	0000	17
+		_MiApp_SearchConnection		CODE           	42BA	0000	565
+		_AddNodeToNetworkTable		CODE           	47B2	0000	259
+		_MiApp_ConnectionMode		CODE           	5B06	0000	45
 
-../../MLA/framework/miwi/src/miwi_mesh.c estimated size: 12081
+../../MLA/framework/miwi/src/miwi_mesh.c estimated size: 12006
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c
+		___wmul        		CODE           	5A68	0000	55
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul16.c estimated size: 55
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/spi.c
-		_SPIGet        		CODE           	4F72	0000	11
-		_SPIPut        		CODE           	4E90	0000	29
+		_SPIGet        		CODE           	5CE2	0000	11
+		_SPIPut        		CODE           	5BEE	0000	29
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/spi.c estimated size: 40
 
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c
+		___lwdiv       		CODE           	54DE	0000	121
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lwdiv.c estimated size: 121
+
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c
-		___awdiv       		CODE           	3E78	0000	191
+		___awdiv       		CODE           	4B28	0000	191
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\awdiv.c estimated size: 191
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c
-		___lmul        		CODE           	48BA	0000	119
+		___lmul        		CODE           	5556	0000	119
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\Umul32.c estimated size: 119
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/symbol.c
-		_InitSymbolTimer		CODE           	4F2C	0000	23
-		_MiWi_TickGet  		CODE           	4930	0000	113
+		_InitSymbolTimer		CODE           	5C8A	0000	23
+		_MiWi_TickGet  		CODE           	55CC	0000	113
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/symbol.c estimated size: 136
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lbmod.c
-		___lbmod       		CODE           	4C74	0000	69
+		___lbmod       		CODE           	5972	0000	69
 
 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\lbmod.c estimated size: 69
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/delay.c
-		_DELAY_ms      		CODE           	40A6	0000	171
+		_DELAY_ms      		CODE           	4D50	0000	171
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/delay.c estimated size: 171
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/lcd.c
-		_LCD_Initialize		CODE           	473C	0000	133
-		_UserInterruptHandler		CODE           	4F14	0000	25
-		_I2CWrite      		CODE           	4E74	0000	29
-		_I2CTask       		CODE           	3FF0	0000	183
+		_LCD_Initialize		CODE           	53D8	0000	133
+		_UserInterruptHandler		CODE           	5C72	0000	25
+		_I2CWrite      		CODE           	5BD2	0000	29
+		_I2CTask       		CODE           	4CA0	0000	177
 
-../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/lcd.c estimated size: 370
+../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/lcd.c estimated size: 364
 
 shared
-		i2_DELAY_ms    		CODE           	4628	0000	141
-		_dpowers       		MEDIUMCONST    	FEB9	0000	11
-		_ScanTime      		MEDIUMCONST    	FE71	0000	61
-		i2_PHYGetShortRAMAddr		CODE           	4DFE	0000	43
-		i2_PHYGetLongRAMAddr		CODE           	4BD8	0000	83
-		i2_PHYSetShortRAMAddr		CODE           	4E28	0000	41
-		__initialization		CODE           	43DC	0000	145
-		i2___lmul      		CODE           	4B2E	0000	87
-		_octpowers     		MEDIUMCONST    	FEAD	0000	13
-		i2_SPIGet      		CODE           	4F7C	0000	11
-		_hexpowers     		MEDIUMCONST    	FEC3	0000	9
-		i2_SPIPut      		CODE           	4EE2	0000	27
+		i2_DELAY_ms    		CODE           	52C4	0000	141
+		_dpowers       		MEDIUMCONST    	FE89	0000	11
+		_ScanTime      		MEDIUMCONST    	FE41	0000	61
+		i2_PHYGetShortRAMAddr		CODE           	5B5C	0000	43
+		i2_PHYGetLongRAMAddr		CODE           	58D6	0000	83
+		i2_PHYSetShortRAMAddr		CODE           	5B86	0000	41
+		__initialization		CODE           	5118	0000	131
+		i2___lmul      		CODE           	582C	0000	87
+		_octpowers     		MEDIUMCONST    	FE7D	0000	13
+		i2_SPIGet      		CODE           	5CEC	0000	11
+		_hexpowers     		MEDIUMCONST    	FE93	0000	9
+		i2_SPIPut      		CODE           	5C40	0000	27
 
-shared estimated size: 672
+shared estimated size: 658
 
 ../firmware/src/main.c
-		_initNwk       		CODE           	372E	0000	369
-		_initChat      		CODE           	4A6A	0000	99
-		_getPseudo     		CODE           	3DB6	0000	195
-		_main          		CODE           	4EC8	0000	27
-		_RX            		CODE           	4CF8	0000	61
-		_TX            		CODE           	39F2	0000	273
+		_initNwk       		CODE           	44EE	0000	369
+		_initChat      		CODE           	5706	0000	99
+		_getPseudo     		CODE           	4A66	0000	195
+		_main          		CODE           	5C26	0000	27
+		_RX            		CODE           	59F6	0000	61
+		_TX            		CODE           	3A9C	0000	695
 
-../firmware/src/main.c estimated size: 1024
+../firmware/src/main.c estimated size: 1446
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\isdigit.c
+		_isdigit       		CODE           	5B32	0000	43
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\isdigit.c estimated size: 43
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c
+		_sprintf       		CODE           	1738	0000	2781
+
+C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c estimated size: 2781
 
 ../../MLA/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c
-		_PHYGetLongRAMAddr		CODE           	4A06	0000	101
-		_PHYSetLongRAMAddr		CODE           	4ACC	0000	99
-		_PHYGetShortRAMAddr		CODE           	4D6A	0000	55
-		_PHYSetShortRAMAddr		CODE           	4DA0	0000	51
-		_InitMRF24J40  		CODE           	3246	0000	693
-		_MiMAC_ReceivedPacket		CODE           	172C	0000	1747
-		_MiMAC_DiscardPacket		CODE           	4EAC	0000	29
+		_PHYGetLongRAMAddr		CODE           	56A2	0000	101
+		_PHYSetLongRAMAddr		CODE           	57CA	0000	99
+		_PHYGetShortRAMAddr		CODE           	5A9E	0000	55
+		_PHYSetShortRAMAddr		CODE           	5AD4	0000	51
+		_InitMRF24J40  		CODE           	4006	0000	693
+		_MiMAC_ReceivedPacket		CODE           	2214	0000	1747
+		_MiMAC_DiscardPacket		CODE           	5C0A	0000	29
 		_high_isr      		CODE           	0008	0000	491
-		_MiMAC_SetChannel		CODE           	4B84	0000	85
-		_MiMAC_Init    		CODE           	4C2A	0000	75
-		_MiMAC_SendPacket		CODE           	1DFE	0000	1211
-		_MiMAC_SetAltAddress		CODE           	49A0	0000	103
+		_MiMAC_SetChannel		CODE           	5882	0000	85
+		_MiMAC_Init    		CODE           	5928	0000	75
+		_MiMAC_SendPacket		CODE           	28E6	0000	1211
+		_MiMAC_SetAltAddress		CODE           	563C	0000	103
 
 ../../MLA/framework/driver/mrf_miwi/src/drv_mrf_miwi_24j40.c estimated size: 4740
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/system.c
-		_SYSTEM_Initialize		CODE           	447A	0000	147
+		_SYSTEM_Initialize		CODE           	5086	0000	147
 
 ../firmware/src/system_config/8bitwdk_pic18f46j50_24j40/system.c estimated size: 147
 
 ../firmware/src/VT100.c
-		_vT100SetCursorPos		CODE           	433C	0000	161
-		_vT100ClearScreen		CODE           	4F42	0000	19
-		_uartHexaPrint 		CODE           	429C	0000	161
-		_uartInitialize		CODE           	4EFC	0000	25
-		__uartPrint    		CODE           	450C	0000	143
-		_vT100EraseEndOfLine		CODE           	4FA2	0000	3
-		_uartWrite     		CODE           	4F64	0000	15
-		_uartRead      		CODE           	4D34	0000	55
+		_vT100SetCursorPos		CODE           	4FE6	0000	161
+		_vT100ClearScreen		CODE           	5CA0	0000	19
+		_uartHexaPrint 		CODE           	4F46	0000	161
+		_uartInitialize		CODE           	5C5A	0000	25
+		__uartPrint    		CODE           	51A8	0000	143
+		_vT100EraseEndOfLine		CODE           	5D00	0000	3
+		_uartWrite     		CODE           	5CD4	0000	15
+		_uartRead      		CODE           	5A32	0000	55
 
 ../firmware/src/VT100.c estimated size: 582
 
