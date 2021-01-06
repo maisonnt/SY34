@@ -149,7 +149,7 @@
 #define EUI_7 0x69
 #define EUI_6 0x66
 #define EUI_5 0x55
-#define EUI_4 0x44
+#define EUI_4 0x11
 #define EUI_3 0x11
 #define EUI_2 0x11
 #define EUI_1 0x11

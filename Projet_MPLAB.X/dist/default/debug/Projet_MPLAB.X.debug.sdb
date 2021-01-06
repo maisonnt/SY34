@@ -1318,21 +1318,25 @@
 "253 C:\Users\tpeea\Documents\MPLABXProjects\Projet_Thomas/firmware/src/main.c
 [v _TX TX `(v  1 e 1 0 ]
 {
-"275
-[v TX@myMessage myMessage `[30]uc  1 a 30 0 ]
-"276
-[v TX@i i `i  1 a 2 36 ]
-"259
-[v TX@my_adr my_adr `i  1 a 2 34 ]
-"273
-[v TX@pt_user2 pt_user2 `*.39uc  1 a 2 32 ]
-"272
-[v TX@pt_user1 pt_user1 `*.39uc  1 a 2 30 ]
-"258
-[v TX@adr2 adr2 `uc  1 a 1 39 ]
+"295
+[v TX@myMessage_1845 myMessage `[40]uc  1 a 40 40 ]
+"296
+[v TX@i_1846 i `i  1 a 2 86 ]
+"278
+[v TX@myMessage myMessage `[40]uc  1 a 40 0 ]
+"279
+[v TX@i i `i  1 a 2 84 ]
 "257
-[v TX@adr1 adr1 `uc  1 a 1 38 ]
-"310
+[v TX@my_adr my_adr `i  1 a 2 88 ]
+"271
+[v TX@pt_user2 pt_user2 `*.39uc  1 a 2 82 ]
+"270
+[v TX@pt_user1 pt_user1 `*.39uc  1 a 2 80 ]
+"256
+[v TX@adr2 adr2 `uc  1 a 1 91 ]
+"255
+[v TX@adr1 adr1 `uc  1 a 1 90 ]
+"308
 } 0
 "492 C:\Program Files (x86)\Microchip\xc8\v1.38\sources\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]

@@ -7965,13 +7965,13 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> -> 17 `i `uc
 -> -> 17 `i `uc
 -> -> 17 `i `uc
--> -> 68 `i `uc
+-> -> 17 `i `uc
 -> -> 85 `i `uc
 -> -> 102 `i `uc
 -> -> 105 `i `uc
 ..
 ]
-[; ;miwi_mesh.c: 60: uint8_t myLongAddress[8] = {0x00,0x11,0x11,0x11, 0x44, 0x55,0x66,0x69};
+[; ;miwi_mesh.c: 60: uint8_t myLongAddress[8] = {0x00,0x11,0x11,0x11, 0x11, 0x55,0x66,0x69};
 "75
 [v _currentChannel `uc ~T0 @X0 1 e ]
 [i _currentChannel

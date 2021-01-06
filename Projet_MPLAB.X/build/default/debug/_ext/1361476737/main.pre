@@ -10443,35 +10443,32 @@ MiApp_DiscardMessage();
 # 253
 void TX(void){
 
-{TxData = 11;};
-
 uint8_t adr1;
 uint8_t adr2;
 int my_adr = myShortAddress.Val;
-if (my_adr == 0000){
-adr1 = 0x0100;
-adr2 = 0x0200;
-}
-if (my_adr == 0100){
-adr1 = 0x0200;
-adr2 = 0x0000;
-}
-if (my_adr == 0200){
-adr1 = 0x0000;
-adr2 = 0x0100;
-}
+if (my_adr == 0){
+adr1 = 100;
+adr2 = 200;
+};
+if (my_adr == 100){
+adr1 = 200;
+adr2 = 0;
+};
+if (my_adr == 200){
+adr1 = 0;
+adr2 = 100;
+};
 uint8_t *pt_user1 = &adr1;
 uint8_t *pt_user2 = &adr2;
 
-char myMessage[30];
-int i = 0;
 
 if (PORTBbits.RB2 != detect1){
 detect1 = PORTBbits.RB2;
 if (PORTBbits.RB2 == 0){
+{TxData = 11;};
+char myMessage[40];
+int i = 0;
 sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num1, adr1);
-_uartPrint((char*)"\r\n");
-_uartPrint((char*)myMessage);
 while (myMessage[i]!=0){
 TxBuffer[TxData++] = myMessage[i];
 i++;
@@ -10480,14 +10477,15 @@ TxBuffer[TxData++] = 0;
 num1 ++;
 MiApp_UnicastAddress(pt_user1,0,0);
 }
-}
+};
 
 if (PORTBbits.RB0 != detect2){
 detect2 = PORTBbits.RB0;
 if (PORTBbits.RB0 == 0){
+{TxData = 11;};
+char myMessage[40];
+int i = 0;
 sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num2, adr2);
-_uartPrint((char*)"\r\n");
-_uartPrint((char*)myMessage);
 while (myMessage[i]!=0){
 TxBuffer[TxData++] = myMessage[i];
 i++;
@@ -10496,7 +10494,7 @@ TxBuffer[TxData++] = 0;
 num2 ++;
 MiApp_UnicastAddress(pt_user2, 0,0);
 }
-}
+};
 
 }
 

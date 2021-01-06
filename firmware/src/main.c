@@ -78,10 +78,10 @@ extern API_UINT16_UNION                 myShortAddress;                     	// 
 extern ACTIVE_SCAN_RESULT               ActiveScanResults[ACTIVE_SCAN_RESULT_SIZE];		// table des actives scan
 extern RECEIVED_MESSAGE  rxMessage;
 
-int detect1 = 0;
-int detect2 = 0;
-int num1 = 0;
-int num2 = 0;
+int detect1 = 0;    // Detection Front montant de RB2
+int detect2 = 0;    // Detection Front montant de RB0
+int num1 = 0;       // Increment RB2
+int num2 = 0;       // Increment RB0
 
 //#define NO_TERM
 #define PSEUDO_MAX_LENGTH  8
@@ -251,61 +251,60 @@ void RX(void){
 /************** TRANSMISSION **************/
 //Gestion des messages sortants
 void TX(void){
-    //Evaluating RB2
-    MiApp_FlushTx();
-    
+    // Gestion des adresses pour envoi Unicast
     uint8_t adr1;
     uint8_t adr2;
     int my_adr = myShortAddress.Val;
-    if (my_adr == 0000){
+    if (my_adr == 0){
         adr1 = 0x0100;
         adr2 = 0x0200;
-    }
-    if (my_adr == 0100){
+    };
+    if (my_adr == 100){
         adr1 = 0x0200;
         adr2 = 0x0000;
-    }
-    if (my_adr == 0200){
+    };
+    if (my_adr == 200){
         adr1 = 0x0000;
         adr2 = 0x0100;
-    }
+    };
     uint8_t *pt_user1 = &adr1;
     uint8_t *pt_user2 = &adr2;
     
-    char myMessage[30];
-    int i = 0;
-
+    // Detection du front montant de RB2
     if (PORTBbits.RB2 != detect1){
         detect1 = PORTBbits.RB2;
         if (PORTBbits.RB2 == 0){
-           sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num1, adr1);
-           uartPrint("\r\n");
-           uartPrint(myMessage);
-           while (myMessage[i]!=0){
+            MiApp_FlushTx();
+            char myMessage[TX_BUFFER_SIZE];
+            int i = 0;
+            sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num1, adr1);
+            while (myMessage[i]!=0){
                 MiApp_WriteData(myMessage[i]);
                 i++;
-           }
-           MiApp_WriteData(0);
-           num1 ++;
-           MiApp_UnicastAddress(pt_user1,false,false);
+            }
+            MiApp_WriteData(0);
+            num1 ++;
+            MiApp_UnicastAddress(pt_user1,false,false);
         }
-    }
+    };
     
+    // Detection du front montant de RB0
     if (PORTBbits.RB0 != detect2){
         detect2 = PORTBbits.RB0;
         if (PORTBbits.RB0 == 0){
-           sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num2, adr2);
-           uartPrint("\r\n");
-           uartPrint(myMessage);
-           while (myMessage[i]!=0){
+            MiApp_FlushTx();
+            char  myMessage[TX_BUFFER_SIZE];
+            int i = 0;
+            sprintf(myMessage, " Pseudo : %s, message unicast %d vers %d", myPseudo, num2, adr2);
+            while (myMessage[i]!=0){
                 MiApp_WriteData(myMessage[i]);
                 i++;
-           }
-           MiApp_WriteData(0);
-           num2 ++;
-           MiApp_UnicastAddress(pt_user2, false,false);
+            }
+            MiApp_WriteData(0);
+            num2 ++;
+            MiApp_UnicastAddress(pt_user2, false,false);
         }
-    }
+    };
     //MiApp_BroadcastPacket(false);
 }
 /*************************************/
